@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Vida Útil Estimada</title>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora Financeira </h1>
+
+         
+              <p>  <label for="input_temperatura">Temperatura Atual (°C):</label> </p>  
+                <input type="number" id="input_temperatura" step="any">
+      
+       
+                <p> <label for="input_umidade">Umidade Atual (%):</label> </p>
+                <input type="number" id="input_umidade" step="any">
+        
+
+               <p> <label for="input_custos"> Custo Total dos Aparelhos:</label>  </p> 
+                <input type="number" id="input_custos" step="any">
+       
+
+          
+               <p> <button onclick="calcularVidaUtil()">Calcular o Prejuizo </button>  </p> 
+            <div class="result" id="resultado">
+
+            </div>
+    </div>
+
+    <script>
+        function calcularVidaUtil() {
+
+            const temperatura = Number(input_temperatura.value)
+            const umidade = Number(input_umidade.value)
+            const custos = Number(input_custos.value)
+    
+
+            if (isNaN(temperatura) || isNaN(umidade) || isNaN(custos)) {
+                resultado.innerHTML = 'Por favor, preencha todos os campos corretamente.';
+                return;
+            }
+
+            if (temperatura < 10) {
+                var t_custos = custos * 0.10
+            }
+
+            else if (temperatura < 30) {
+
+                var t_custos = 0
+            }
+
+            else if (temperatura > 30) {
+                var t_custos = custos * 0.20
+            }
+
+            if ( umidade < 20 ){
+                var u_custos = custos * 0.20
+            }
+            else if ( umidade < 60 ) {
+                var u_custos = custos * 0
+            }
+            else if (umidade > 60 ) {
+                var u_custos = custos * 0.30
+            }
+             
+            var total_custos = u_custos + t_custos
+            var prejuizo = custos + total_custos
+            var economizar = custos - total_custos
+
+
+
+            resultado.innerHTML = `O valor total do seu prejuizo é R$ ${prejuizo} e utilizando a UMITRIX você economizará R$ ${ total_custos} `;
+        }
+    </script>
+</body>
+
+</html>

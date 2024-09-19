@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+</head>
+<body>
+    <div id="div_IC">
+        <h1>Índice de calor no estoque</h1>
+        Temperatura (°C): <input id="input_temperatura" placeholder="Ex: 32"><br><br>
+        Umidade relativa do ar (%): <input type="text" id="input_umidade" placeholder="Ex: 40"><br><br>
+        Quantidade de nooteboks em estoque: <input type="text" id="input_qtd" placeholder="Ex: 500"><br><br>
+        
+        <button onclick="IC()">Calcular IC</button><br><br> 
+    </div>
+        
+    <div id="div_resultado"></div>
+        
+        
+</body>
+<script>
+    function IC(){
+        const temp = Number(input_temperatura.value)
+        const umi =  Number(input_umidade.value)
+
+        const c1 = -8.78469475556
+        const c2 = 1.61139411
+        const c3 = 2.33854883889
+        const c4 = -0.14611605
+        const c5 = -0.012308094
+        const c6 = -0.0164248277778
+        const c7 = 0.002211732
+        const c8 = 0.00072546
+        const c9 = -0.000003582
+        const tempQua = temp * temp
+        const umiQua = umi * umi
+
+        const IC = c1 + (c2 * temp) + (c3 * umi) + (c4 * temp * umi) + (c5 * tempQua) + (c6 * umiQua) + (c7 * tempQua * umi) + (c8 *temp *umiQua) + (c9* tempQua * umiQua)
+
+        const qtdNote = parseInt(input_qtd.value)                     
+        
+        const ValorBateria_troca = 350
+        var gastoCom_troca = ValorBateria_troca * qtdNote
+           
+        
+        
+        if (IC<=35 ) {
+            div_resultado.innerHTML = `<br>O IC do estoque é ${IC.toFixed(1)}°C! O ambiênte está favorável para a armazenagem dos dispositivos, não acarretará em custos em reparo de bateria. `
+            
+        } else if(IC<=39) {    div_resultado.innerHTML = `<br>O IC do estoque é ${IC.toFixed(1)}°C! O ambiênte está começando a ficar instável para a armazenagem dos dispositivos, podendo acarretar em custos em reparo de bateria. `
+        } else {
+            div_resultado.innerHTML = `<br>O IC do estoque é ${IC.toFixed(1)}°C! Alerta de temperatura e umidade elevadas para a armazenagem dos dispositivos.` 
+            div_resultado.innerHTML += ' O valor médio para troca de baterias de notebooks é igual R$350,00'
+            div_resultado.innerHTML += `<br>O valor de custos com troca de baterias será de R$${gastoCom_troca.toFixed(2)}`
+        }
+        
+
+    }
+
+
+
+</script>
+   
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div>
+        <h1>Calcule o Prejuizo estimado do seu ESTOQUE</h1><br>
+        Informe o valor da aquisição (por aparelho)<br>
+        <input type="text" id="custo_da_aquisicao" placeholder="Informe o valor por aparelho (ex:1500)"><br>
+        Informe a quantidade de produtos adquiridos<br>
+        <input type="text" id="quantidade" placeholder="Informe a quantidade de aparelhos que tem no estoque(ex:1500)"><br>
+        Informe o custo do armazém mensalmente<br>
+        <input type="text" id="custo_do_armazem_mensal" placeholder="Informe o custo do estoque mensal(ex:1200)"><br>
+        Informe a quantidade de meses que o armazem está com  contrato<br>
+        <input type="text" id="quantidade_de_meses_armazem" placeholder="Informe a quantidade de meses do estoque(ex:12 ) "><br>
+        Informe a depeciação do aparelho anualmente(Um valor estimado)<br>
+        <input type="text" id="taxa_depreciacao_anual" placeholder="Informe o valor da porcentagem(ex:15)"><br>
+        Informe os danos do aparelho anualmente(Um valor estimado)<br>
+        <input type="text" id="percentual_de_danos"  placeholder=" Informe o valor da porcentagem(ex:20)"><br>
+        <button onclick="CalcularPrejuizo()">Prejuizo Total</button>
+    </div>
+    <div id="exibir"></div>
+</body>
+
+</html>
+<script>
+    function CalcularPrejuizo() {
+        var custoAquisicao = custo_da_aquisicao.value
+        var quantidadeValor = quantidade.value
+        var custoArmazenagemMensal = custo_do_armazem_mensal.value
+        var mesesArmazenagem = quantidade_de_meses_armazem.value
+        var taxaDepreciacaoAnual = taxa_depreciacao_anual.value
+        var percentualDanos = percentual_de_danos.value
+
+        var custoTotalAquisicao = custoAquisicao * quantidadeValor
+        var custoTotalArmazenagem = custoArmazenagemMensal * mesesArmazenagem
+        var depreciacao = ((taxaDepreciacaoAnual / 100) / 2) * custoTotalAquisicao
+        var danos = (percentualDanos / 100) * custoTotalAquisicao
+
+        var prejuizoComDanos = custoTotalAquisicao + custoTotalArmazenagem + depreciacao + danos
+
+        var custoSemDanos = custoTotalAquisicao + custoTotalArmazenagem + depreciacao
+
+        var danoEvitado = danos
+
+        prejuizoComDanos = prejuizoComDanos.toFixed(2)
+        custoSemDanos = custoSemDanos.toFixed(2)
+        danoEvitado = danoEvitado.toFixed(2)
+
+        exibir.innerHTML=`Prejuízo total com danos: R$ ${prejuizoComDanos}<br>
+        Custo total sem danos: R$ ${custoSemDanos}
+        Dano evitado com uso de sensores: R$ ${danoEvitado}
+        `
+        
+    }
+</script>
