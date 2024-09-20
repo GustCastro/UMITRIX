@@ -26,5 +26,10 @@ A Umitrix oferece uma solução para o monitoramento de temperatura e umidade em
  - Harison Rios [https://github.com/HarisonRios]
  - Isabella Viana [https://github.com/isabella-viana]
  - João Victor Galdino [https://github.com/JoaoGaldinoCunha]
+ - Gabriel Andrade [https://github.com/andradeGabriel05]
+ - Daniel Sena [https://github.com/Danieldev707]
+ - Erick lee [https://github.com/ErickHlee]
+ - Leandro Boneto [https://github.com/Leandro-Boneto]
+ - Everton P. [https://github.com/Leandro-Boneto]
  
 
