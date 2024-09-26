@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 * {
     font-family: "Open Sans", sans-serif;
@@ -20,10 +23,11 @@ body {
     font-size: 24px;
     border: none;
     outline: none;
-    background-color: red;
+    background-color: grey;
     cursor: pointer;
     padding: 15px;
     border-radius: 4px;
+    box-shadow: 30px;
 }
 
 #btn_cima img {
@@ -32,7 +36,8 @@ body {
 }
 
 #btn_cima:hover {
-    background-color: #555;
+    /* Fazer uma animação */
+    background-color: red;
 }
 
 /* #myBtn {
@@ -59,7 +64,7 @@ header {
     margin: 0;
     padding: 0;
     height: 100vh;
-    background-image: url('https://png.pngtree.com/background/20230616/original/pngtree-faceted-abstract-background-in-3d-with-shimmering-iridescent-metallic-texture-of-picture-image_3653595.jpg');
+    background-image: url('https://s3-alpha-sig.figma.com/img/9134/af21/741b3ae5201e1a05978fd4c81919ecd9?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fAk6TXzCtsVUelHlhff4PbmInqWZjcwnNqvVYHsSRBab1FELbXnWxagK8MIx02oinZuWoux7UFR-yo1G3x7lYim9fmUtou1fb~9NffGxGe0QJNdtuTiLhHYPpSUyVOP62bL0La9UpgFk-fS5stpcpj~QIyZsWGAkxLO6HRmDI7Df-310g~dgbCjNS8OdZbY8hJhRgXLpLb1iDPGIapi47HXpLL8fluWq3U7qzwFQPEAKysbqdILru8-dwZP~onE1U7spArOUesuQSj-e7fNyQmf2dXcybRNEmI6b8NsC3Olaw64UzQMKJBVHXD0-sQu2x8DfuM4ADIPZ63qdO4zbwQ__');
     background-size: cover;
 }
 
@@ -160,8 +165,160 @@ header {
     text-align: center;
     text-decoration: none;
     margin-top: 3vh;
+    color: black;
 }
 
 .sla {
     height: 100vh;
+}
+
+/* Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós */
+/* Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós */
+/* Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós */
+
+.sobreNos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    font-family: "Poppins", sans-serif;;
+}
+
+.sobreNos_img img {
+    width: 529px;
+    height: 571px;
+    
+}
+
+.container_sobreNos {
+    height: auto;
+    width: 600px;
+}
+
+.container_sobreNos h2 {
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.container_sobreNos p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.margin {
+    margin-top: 30px;
+}
+
+
+/* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
+/* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
+/* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
+
+.objetivo {
+    font-family: "Poppins", sans-serif;;
+    height: 100vh;
+    width: 100%;
+    background-color: #2F3254;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container_objetivo {
+    height: auto;
+    width: 592px;
+}
+
+.objetivo_img img{
+    height: 529px;
+    width: 571px;
+}
+
+.container_objetivo h2 {
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.container_objetivo p {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+/* Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe */
+/* Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe */
+/* Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe */
+
+.equipe {
+    font-family: "Poppins", sans-serif;;
+    height: 70vh;
+    width: 100%;
+    background-color: #2F3254;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: white;
+}
+
+.equipe h2 {
+    margin-top: 30px;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.equipe p {
+    margin-top: -25px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.box-equipe {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 95vw;
+    height: 450px;
+    color: white;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 0.84px white;
+    border-radius: 20px;
+    width: 218.53px;
+    height: 300px;
+}
+
+.box img {
+    margin-top: 40px;
+    height: 100px;
+    width: 100px;
+}
+
+.box p {
+    margin-top: 40px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 100;
+    line-height: -30px;
+    color: rgba(240, 248, 255, 0.815);
+}
+
+.box h3 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 300;
+}
+
+.fa {
+    color: white;
 }
