@@ -6,12 +6,9 @@
 * {
     font-family: "Open Sans", sans-serif;
     scroll-behavior: smooth;
-}
-
-body {
     margin: 0;
     padding: 0;
-    width: 100%;
+    box-sizing: border-box;
 }
 
 #btn_cima {
@@ -31,7 +28,7 @@ body {
 }
 
 #btn_cima img {
-    width:20px;
+    width: 20px;
     height: 20px;
 }
 
@@ -60,22 +57,14 @@ body {
     background-color: #555;
   } */
 
-header {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-image: url('https://s3-alpha-sig.figma.com/img/9134/af21/741b3ae5201e1a05978fd4c81919ecd9?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fAk6TXzCtsVUelHlhff4PbmInqWZjcwnNqvVYHsSRBab1FELbXnWxagK8MIx02oinZuWoux7UFR-yo1G3x7lYim9fmUtou1fb~9NffGxGe0QJNdtuTiLhHYPpSUyVOP62bL0La9UpgFk-fS5stpcpj~QIyZsWGAkxLO6HRmDI7Df-310g~dgbCjNS8OdZbY8hJhRgXLpLb1iDPGIapi47HXpLL8fluWq3U7qzwFQPEAKysbqdILru8-dwZP~onE1U7spArOUesuQSj-e7fNyQmf2dXcybRNEmI6b8NsC3Olaw64UzQMKJBVHXD0-sQu2x8DfuM4ADIPZ63qdO4zbwQ__');
-    background-size: cover;
-}
-
 .navBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    height: 10vh;
-    background-color: #0000006c;
     position: fixed;
+    z-index: 10;
+    background-color: #3b3b3b61;
 }
 
 .container_navBar {
@@ -83,14 +72,15 @@ header {
     width: 55%;
     justify-content: space-evenly;
     align-items: center;
+
 }
 
 .container_navBar img {
-    height: 200px;
-    width: 200px;
+    height: 80px;
+    width: 80px;
     display: flex;
-    margin-top: 20px;
-    
+    margin: 20px;
+
 }
 
 .container_login {
@@ -111,8 +101,10 @@ header {
     color: black
 }
 
-.container_navBar a, .container_login a {
-    color: white;
+.container_navBar a,
+.container_login a {
+    color: #fff;
+
     text-decoration: none;
 }
 
@@ -120,31 +112,37 @@ header {
 /* Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner  */
 /* Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner  */
 
+
+
 .banner {
     margin: 0;
-    padding: 0;
-    height: 40vh;
     width: 100%;
+    background-image: url('https://s3-alpha-sig.figma.com/img/9134/af21/741b3ae5201e1a05978fd4c81919ecd9?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fAk6TXzCtsVUelHlhff4PbmInqWZjcwnNqvVYHsSRBab1FELbXnWxagK8MIx02oinZuWoux7UFR-yo1G3x7lYim9fmUtou1fb~9NffGxGe0QJNdtuTiLhHYPpSUyVOP62bL0La9UpgFk-fS5stpcpj~QIyZsWGAkxLO6HRmDI7Df-310g~dgbCjNS8OdZbY8hJhRgXLpLb1iDPGIapi47HXpLL8fluWq3U7qzwFQPEAKysbqdILru8-dwZP~onE1U7spArOUesuQSj-e7fNyQmf2dXcybRNEmI6b8NsC3Olaw64UzQMKJBVHXD0-sQu2x8DfuM4ADIPZ63qdO4zbwQ__');
+    background-size: cover;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(0.5);
 }
 
 .container_banner {
-    height: 100%;
-    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: 30px;
 }
 
 .container_banner h2 {
-    margin-top: 60vh;
-    width: 48vw;
-    font-size: 3.3rem;
+    margin-top: 35vh;
+    width: 58vw;
+    font-size: 2.9rem;
     text-align: center;
     text-size-adjust: 30px;
     color: white;
     letter-spacing: 2.5px;
     line-height: 1;
+    margin-bottom: 20px;
 }
 
 .container_banner p {
@@ -158,10 +156,9 @@ header {
 .container_banner a {
     display: flex;
     justify-content: center;
-    padding: 1.2vh 0;
-    width: 14vw;
+    padding: 15px;
     background-color: white;
-    border-radius: 24px;
+    border-radius: 4px;
     text-align: center;
     text-decoration: none;
     margin-top: 3vh;
@@ -183,13 +180,14 @@ header {
     align-items: center;
     height: 100vh;
     width: 100%;
-    font-family: "Poppins", sans-serif;;
+    font-family: "Poppins", sans-serif;
+    ;
 }
 
 .sobreNos_img img {
     width: 529px;
     height: 571px;
-    
+
 }
 
 .container_sobreNos {
@@ -221,7 +219,8 @@ header {
 /* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
 
 .objetivo {
-    font-family: "Poppins", sans-serif;;
+    font-family: "Poppins", sans-serif;
+    ;
     height: 100vh;
     width: 100%;
     background-color: #2F3254;
@@ -237,7 +236,7 @@ header {
     width: 592px;
 }
 
-.objetivo_img img{
+.objetivo_img img {
     height: 529px;
     width: 571px;
 }
@@ -257,10 +256,10 @@ header {
 /* Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe */
 
 .equipe {
-    font-family: "Poppins", sans-serif;;
-    height: 70vh;
+    font-family: "Poppins", sans-serif;
+    ;
     width: 100%;
-    background-color: #2F3254;
+    background-color: #1e2748;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -274,7 +273,6 @@ header {
 }
 
 .equipe p {
-    margin-top: -25px;
     font-weight: 600;
     font-size: 18px;
 }
