@@ -287,8 +287,6 @@
   text-decoration: none;
   margin-top: 30px;
   color: #000;
-
-
 }
 
 /* Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe */
@@ -419,4 +417,43 @@
 
 .contato_container button:hover {
   opacity: 0.8;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  padding: 30px;
+}
+
+footer .logo {
+  height: 80px;
+  width: 80px;
+}
+
+footer .footer_links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .footer_links a {
+  color: #000;
+  margin: 10px;
+}
+
+footer .footer_social {
+  display: flex;
+  align-items: center;
+}
+
+footer .wrapper_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
