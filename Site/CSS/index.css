@@ -1,40 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-    font-family: "Open Sans", sans-serif;
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #btn_cima {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 24px;
-    border: none;
-    outline: none;
-    background-color: grey;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
-    box-shadow: 30px;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background-color: grey;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+  box-shadow: 30px;
 }
 
 #btn_cima img {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 #btn_cima:hover {
-    /* Fazer uma animação */
-    background-color: red;
+  /* Fazer uma animação */
+  background-color: red;
 }
 
 /* #myBtn {
@@ -58,115 +57,112 @@
   } */
 
 .navBar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    position: fixed;
-    z-index: 10;
-    background-color: #3b3b3b61;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  background-color: #3b3b3b61;
 }
 
 .container_navBar {
-    display: flex;
-    width: 55%;
-    justify-content: space-evenly;
-    align-items: center;
-
+  display: flex;
+  width: 55%;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .container_navBar img {
-    height: 80px;
-    width: 80px;
-    display: flex;
-    margin: 20px;
-
+  height: 80px;
+  width: 80px;
+  display: flex;
+  margin: 20px;
 }
 
 .container_login {
-    display: flex;
-    width: 20%;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-right: 10vw;
+  display: flex;
+  width: 20%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-right: 10vw;
 }
 
 .container_login .cadastro {
-    background-color: white;
-    width: 8vw;
-    padding: 5px 0;
-    font-weight: 600;
-    text-align: center;
-    border-radius: 16px;
-    color: black
+  background-color: white;
+  width: 8vw;
+  padding: 5px 0;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 16px;
+  color: black;
 }
 
 .container_navBar a,
 .container_login a {
-    color: #fff;
+  color: #fff;
 
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner  */
 /* Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner  */
 /* Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner Banner  */
 
-
-
 .banner {
-    margin: 0;
-    width: 100%;
-    background-image: url('https://s3-alpha-sig.figma.com/img/9134/af21/741b3ae5201e1a05978fd4c81919ecd9?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fAk6TXzCtsVUelHlhff4PbmInqWZjcwnNqvVYHsSRBab1FELbXnWxagK8MIx02oinZuWoux7UFR-yo1G3x7lYim9fmUtou1fb~9NffGxGe0QJNdtuTiLhHYPpSUyVOP62bL0La9UpgFk-fS5stpcpj~QIyZsWGAkxLO6HRmDI7Df-310g~dgbCjNS8OdZbY8hJhRgXLpLb1iDPGIapi47HXpLL8fluWq3U7qzwFQPEAKysbqdILru8-dwZP~onE1U7spArOUesuQSj-e7fNyQmf2dXcybRNEmI6b8NsC3Olaw64UzQMKJBVHXD0-sQu2x8DfuM4ADIPZ63qdO4zbwQ__');
-    background-size: cover;
-    height: 100vh;
-    position: absolute;
-    z-index: -1;
-    filter: brightness(0.5);
+  margin: 0;
+  width: 100%;
+  background-image: url("https://s3-alpha-sig.figma.com/img/9134/af21/741b3ae5201e1a05978fd4c81919ecd9?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fAk6TXzCtsVUelHlhff4PbmInqWZjcwnNqvVYHsSRBab1FELbXnWxagK8MIx02oinZuWoux7UFR-yo1G3x7lYim9fmUtou1fb~9NffGxGe0QJNdtuTiLhHYPpSUyVOP62bL0La9UpgFk-fS5stpcpj~QIyZsWGAkxLO6HRmDI7Df-310g~dgbCjNS8OdZbY8hJhRgXLpLb1iDPGIapi47HXpLL8fluWq3U7qzwFQPEAKysbqdILru8-dwZP~onE1U7spArOUesuQSj-e7fNyQmf2dXcybRNEmI6b8NsC3Olaw64UzQMKJBVHXD0-sQu2x8DfuM4ADIPZ63qdO4zbwQ__");
+  background-size: cover;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  filter: brightness(0.5);
+}
+
+.wrapper_banner {
+  height: 100vh;
 }
 
 .container_banner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+  height: 100%;
 }
 
 .container_banner h2 {
-    margin-top: 35vh;
-    width: 58vw;
-    font-size: 2.9rem;
-    text-align: center;
-    text-size-adjust: 30px;
-    color: white;
-    letter-spacing: 2.5px;
-    line-height: 1;
-    margin-bottom: 20px;
+  margin-top: 35vh;
+  width: 58vw;
+  font-size: 2.9rem;
+  text-align: center;
+  text-size-adjust: 30px;
+  color: white;
+  letter-spacing: 2.5px;
+  line-height: 1;
+  margin-bottom: 20px;
 }
 
 .container_banner p {
-    width: 40%;
-    text-align: center;
-    color: white;
-    letter-spacing: 2px;
-    line-height: 1.4;
+  width: 40%;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 1.4;
 }
 
 .container_banner a {
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    background-color: white;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    margin-top: 3vh;
-    color: black;
-}
-
-.sla {
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 3vh;
+  color: black;
 }
 
 /* Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós */
@@ -174,81 +170,125 @@
 /* Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós */
 
 .sobreNos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-    ;
-}
-
-.sobreNos_img img {
-    width: 529px;
-    height: 571px;
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
 }
 
 .container_sobreNos {
-    height: auto;
-    width: 600px;
+  height: auto;
+  width: 600px;
 }
 
 .container_sobreNos h2 {
-    font-weight: 600;
-    font-size: 35px;
+  font-weight: 600;
+  font-size: 35px;
 }
 
 .container_sobreNos p {
-    font-size: 18px;
-    font-weight: 500;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .margin {
-    margin-top: 30px;
+  margin-top: 30px;
 }
-
 
 /* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
 /* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
 /* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
 
 .objetivo {
-    font-family: "Poppins", sans-serif;
-    ;
-    height: 100vh;
-    width: 100%;
-    background-color: #2F3254;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  width: 100%;
+  background-color: #2f3254;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .container_objetivo {
-    height: auto;
-    width: 592px;
+  height: auto;
+  width: 592px;
 }
 
 .objetivo_img img {
-    height: 529px;
-    width: 571px;
+  height: 529px;
+  width: 571px;
 }
 
 .container_objetivo h2 {
-    font-weight: 600;
-    font-size: 35px;
+  font-weight: 600;
+  font-size: 35px;
 }
 
 .container_objetivo p {
-    font-weight: 400;
-    font-size: 18px;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* calculadora */
+
+.calculadora {
+  position: relative;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculadora .banner_calculadora {
+  height: 100%;
+  width: 100%;
+
+  background-image: url("../src/financeiro-background.jfif");
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+  filter: brightness(0.3);
+}
+
+.calculadora .container_calculadora {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculadora .container_calculadora h1 {
+  text-align: center;
+  font-size: 55px;
+  width: 70%;
+}
+
+.calculadora .container_calculadora span {
+  text-align: center;
+  margin-top: 30px;
+  width: 45%;
+}
+
+.calculadora .container_calculadora a {
+  text-align: center;
+  padding: 15px 25px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 30px;
+  color: #000;
+
+
 }
 
 /* Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe */
@@ -256,69 +296,127 @@
 /* Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe Equipe */
 
 .equipe {
-    font-family: "Poppins", sans-serif;
-    ;
-    width: 100%;
-    background-color: #1e2748;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    color: white;
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+  background-color: #1e2748;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: white;
 }
 
 .equipe h2 {
-    margin-top: 30px;
-    font-weight: 600;
-    font-size: 35px;
+  margin-top: 30px;
+  font-weight: 600;
+  font-size: 35px;
 }
 
 .equipe p {
-    font-weight: 600;
-    font-size: 18px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .box-equipe {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 95vw;
-    height: 450px;
-    color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 95vw;
+  height: 450px;
+  color: white;
 }
 
 .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: solid 0.84px white;
-    border-radius: 20px;
-    width: 218.53px;
-    height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: solid 0.84px white;
+  border-radius: 20px;
+  width: 218.53px;
+  height: 300px;
 }
 
 .box img {
-    margin-top: 40px;
-    height: 100px;
-    width: 100px;
-    background-color: grey;
-    border-radius: 100px;
+  margin-top: 40px;
+  height: 100px;
+  width: 100px;
+  background-color: grey;
+  border-radius: 100px;
 }
 
 .box p {
-    margin-top: 40px;
-    margin-bottom: 0;
-    font-size: 14px;
-    font-weight: 100;
-    line-height: -30px;
-    color: #f0f8ffd0;
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: -30px;
+  color: #f0f8ffd0;
 }
 
 .box h3 {
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 300;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 300;
 }
 
 .fa {
-    color: white;
+  color: white;
+}
+
+/* contato */
+
+.contato_container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #2f3254;
+  color: white;
+}
+
+.contato_container .wrapper-input {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: space-between;
+}
+
+.contato_container .input-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.contato_container h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 65px;
+  z-index: 3;
+}
+
+.contato_container input,
+.contato_container textarea {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #4d5ebb;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.contato_container textarea {
+  height: 200px;
+}
+
+.contato_container button {
+  padding: 12px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 20%;
+}
+
+.contato_container button:hover {
+  opacity: 0.8;
 }
