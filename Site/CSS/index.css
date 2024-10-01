@@ -257,7 +257,7 @@
   background-size: cover;
   position: absolute;
   z-index: -1;
-  filter: brightness(0.3);
+  filter: brightness(0.4);
 }
 
 .calculadora .container_calculadora {
@@ -419,6 +419,56 @@
   opacity: 0.8;
 }
 
+/* mapa */
+
+.mapa {
+  position: relative;
+  height: 100vh;
+  background-color: #f0f8ff;
+}
+
+.mapa .banner_mapa {
+  background-image: url("../src/mapa.png");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  position: absolute;
+  filter: brightness(0.4);
+}
+
+.mapa .mapa_title {
+  display: flex;
+  justify-content: center;
+}
+
+.mapa .mapa_text svg {
+  width: 60px;
+  height: 60px;
+  fill: #fff;
+  margin-top: 10px;
+}
+
+.mapa .mapa_text {
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mapa .mapa_text h1 {
+  margin: 0 20px;
+  font-size: 60px;
+  color: #fff;
+}
+
+.mapa .mapa_text p {
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+}
+
 /* footer */
 
 footer {
@@ -427,12 +477,17 @@ footer {
   align-items: center;
   flex-direction: column;
   position: relative;
-  padding: 30px;
+  padding: 10px 30px;
 }
 
 footer .logo {
   height: 80px;
   width: 80px;
+}
+
+/* isso tá um pouco de gambiarra, mas funcionou  */
+footer .logo_img {
+  width: 20vw;
 }
 
 footer .footer_links {
@@ -446,9 +501,11 @@ footer .footer_links a {
   margin: 10px;
 }
 
+/* isso tá um pouco de gambiarra, mas funcionou  */
 footer .footer_social {
   display: flex;
-  align-items: center;
+  justify-content: end;
+  width: 20vw;
 }
 
 footer .wrapper_footer {
@@ -456,4 +513,11 @@ footer .wrapper_footer {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+footer .fa {
+  color: #000;
+  font-size: 24px;
+  margin: 0 10px;
+  margin-top: 5px;
 }
