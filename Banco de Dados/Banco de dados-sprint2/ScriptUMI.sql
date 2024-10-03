@@ -10,6 +10,9 @@ senha varchar(30) not null,
 telefone varchar(15) not null
 );
 ALTER TABLE Empresa modify column cnpj varchar(18) not null;
+ALTER TABLE Empresa RENAME COLUMN nome to razaoSocial;
+ALTER TABLE Empresa ADD COLUMN nomeFantasia varchar(45);
+ALTER TABLE Empresa ADD COLUMN representanteLegal varchar(45);
 
 CREATE TABLE Endereco (
 idEndereco int primary key auto_increment,
@@ -60,6 +63,17 @@ INSERT INTO Empresa (nome, cnpj, email, senha, telefone) VALUES
 ('Construtora Horizonte', '11.122.233/0001-97', 'atendimento@horizonte.com.br', 'construcao789', '(31) 91234-5678'),
 ('Comércio de Alimentos Delícias', '44.455.566/0001-98', 'contato@delicias.com.br', 'gostoso101', '(41) 92345-6789'),
 ('Serviços de Limpeza Brilhante', '77.788.899/0001-99', 'suporte@brilhante.com.br', 'limpeza202', '(51) 93456-7890');
+UPDATE Empresa SET nomeFantasia = 'TCA' WHERE idEmpresa = 1;
+UPDATE Empresa SET nomeFantasia = 'Soluções Verdes' WHERE idEmpresa = 2;
+UPDATE Empresa SET nomeFantasia = 'BHempreteira' WHERE idEmpresa = 3;
+UPDATE Empresa SET nomeFantasia = 'CAD.food' WHERE idEmpresa = 4;
+UPDATE Empresa SET nomeFantasia = 'Serviços Brilho' WHERE idEmpresa = 5;
+UPDATE Empresa SET representanteLegal = 'Jorge Luiz' WHERE idEmpresa = 1;
+UPDATE Empresa SET representanteLegal = 'Afonso Rubens' WHERE idEmpresa = 2;
+UPDATE Empresa SET representanteLegal = 'Luiz Diaz' WHERE idEmpresa = 3;
+UPDATE Empresa SET representanteLegal = 'Guilherme Brigs' WHERE idEmpresa = 4;
+UPDATE Empresa SET representanteLegal = 'Caio Ribeiro' WHERE idEmpresa = 5;
+
 
 INSERT INTO Endereco (cep, estado, cidade, rua, numero, fkEmpresa) VALUES
 ('01001-000', 'SP', 'São Paulo', 'Rua da Consolação', '123-a', 1),
