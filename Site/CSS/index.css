@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #btn_cima {
   display: none;
   position: fixed;
@@ -63,7 +67,7 @@
   width: 100%;
   position: fixed;
   z-index: 10;
-  background-color: #3b3b3b61;
+  background-color: #272727;
 }
 
 .container_navBar {
@@ -478,6 +482,7 @@ footer {
   flex-direction: column;
   position: relative;
   padding: 10px 30px;
+  background-color: #272727;
 }
 
 footer .logo {
@@ -497,7 +502,7 @@ footer .footer_links {
 }
 
 footer .footer_links a {
-  color: #000;
+  color: #fff;
   margin: 10px;
 }
 
@@ -516,8 +521,12 @@ footer .wrapper_footer {
 }
 
 footer .fa {
-  color: #000;
+  color: #fff;
   font-size: 24px;
   margin: 0 10px;
   margin-top: 5px;
+}
+
+.umitrix_direitos {
+  color: #fff;
 }
