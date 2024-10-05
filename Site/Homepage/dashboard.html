@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Umitrix</title>
+    <link rel="stylesheet" href="../CSS/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <aside>
+            <div class="menu">
+                <ul>
+                    <li><a href="#"><i class="fa fa-home"></i></a></li>
+                    <li><a href="#"><i class="fa fa-users"></i></a></li>
+                    <li><a href="#"><i class="fa fa-users"></i></a></li>
+                    <li><a href="#"><i class="fa fa-users"></i></a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <div class="wrapper-tela">
+            <header>
+                <h1>Olá, Loja XPTO!</h1>
+                <input type="search" name="" id="">
+            </header>
+            <div class="wrapper-graficos">
+                <section class="grid-section-box">
+                    <h1>Dashboard Umitrix</h1>
+                    <div class="grid-box">
+                        <div class="box1"></div>
+                        <div class="box2"></div>
+                        <div class="box3"></div>
+                    </div>
+                </section>
+
+                <section class="chart-container">
+                    <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+                </section>
+
+                <section class="chart-container">
+                    <canvas id="myChartPie" style="position: relative; height:40vh; width:40vw"></canvas>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            datasets: [
+                {
+                    label: 'Temperatura média',
+                    data: [22, 24, 27, 23, 20, 18],
+                    backgroundColor: '#fff',
+                    borderColor: '#fff',
+                    borderWidth: 3
+                },
+                {
+                    label: 'Umidade (%)',
+                    data: [90, 89, 93, 87, 88, 82],
+                    backgroundColor: '#c33',
+                    borderColor: '#c33',
+                    borderWidth: 3
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctx2 = document.getElementById('myChartPie');
+    const DATA_COUNT = 5;
+    const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 };
+    new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+            labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
+            datasets: [
+                {
+                    label: 'Dataset 1',
+                    data: Utils.numbers(NUMBER_CFG),
+                    backgroundColor: Object.values(Utils.CHART_COLORS),
+                }
+            ]},
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
