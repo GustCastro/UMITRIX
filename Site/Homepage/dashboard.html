@@ -11,42 +11,70 @@
 </head>
 
 <body>
-    <div class="container">
-        <aside>
-            <div class="menu">
-                <ul>
-                    <li><a href="#"><i class="fa fa-home"></i></a></li>
-                    <li><a href="#"><i class="fa fa-users"></i></a></li>
-                    <li><a href="#"><i class="fa fa-users"></i></a></li>
-                    <li><a href="#"><i class="fa fa-users"></i></a></li>
-                </ul>
-            </div>
-        </aside>
+    <aside>
+        <div class="menu">
+            <ul>
+                <li><a href="#"><i class="fa fa-home"></i></a></li>
+                <li><a href="#"><i class="fa fa-users"></i></a></li>
+                <li><a href="#"><i class="fa fa-users"></i></a></li>
+                <li><a href="#"><i class="fa fa-users"></i></a></li>
+            </ul>
+        </div>
+    </aside>
 
-        <div class="wrapper-tela">
-            <header>
+    <div class="container">
+        <div class="wrapper-left">
+            <div class="bem-vindo">
                 <h1>Olá, Loja XPTO!</h1>
-                <input type="search" name="" id="">
-            </header>
-            <div class="wrapper-graficos">
-                <section class="grid-section-box">
-                    <h1>Dashboard Umitrix</h1>
-                    <div class="grid-box">
-                        <div class="box1"></div>
-                        <div class="box2"></div>
-                        <div class="box3"></div>
+                <input type="search" name="" id="" placeholder="Search">
+            </div>
+            
+            <div class="any-title">
+                <h1>Computadores em estoque</h1>
+            </div>
+
+            <div class="grafico-principal">
+                <div class="teste">
+                    <section class="grid-section-box">
+                        <div class="grid-box">
+                            <div class="box1"></div>
+                            <div class="box2"></div>
+                            <div class="box3"></div>
+                        </div>
+                    </section>
+
+                    <section class="chart-container">
+                        <canvas id="myChart" style="position: relative; height:30vh; width:40vw"></canvas>
+                    </section>
+                </div>
+                <section class="total">
+                    <div class="total-valor1">
+                        <h2>Total de computadores</h2>
+                        <p>R$ 1.500.000,00</p>
+                    </div>
+                    <div class="total-valor2">
+
+                        <h2>Custo total do estoque</h2>
+                        <p>R$ 1.500.000,00</p>
                     </div>
                 </section>
+            </div>
+            <div class="container-graficos-outros">
+                <div class="left">
+                    <section class="chart-container chart-container-donut">
+                        <canvas id="myChartPie" style="position: relative; height:20vh; width:100%"></canvas>
+                    </section>
 
-                <section class="chart-container">
-                    <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
-                </section>
-
-                <section class="chart-container">
-                    <canvas id="myChartPie" style="position: relative; height:40vh; width:40vw"></canvas>
+                    <section class="chart-container chart-container-dispersao">
+                        <canvas id="myChartPie" style="position: relative; height:20vh; width:100%"></canvas>
+                    </section>
+                </div>
+                <section class="chart-container chart-container-bar">
+                    <canvas id="myChartBar" style="position: relative; height:20vh; width:100%"></canvas>
                 </section>
             </div>
         </div>
+
     </div>
 
 
@@ -101,7 +129,8 @@
                     data: Utils.numbers(NUMBER_CFG),
                     backgroundColor: Object.values(Utils.CHART_COLORS),
                 }
-            ]},
+            ]
+        },
         options: {
             responsive: true,
             scales: {

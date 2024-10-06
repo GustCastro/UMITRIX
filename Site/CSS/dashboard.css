@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +8,8 @@
 
 body {
   background-color: #17224d;
-  font-family: "Poppins", sans-serif;
-}
-
-.container {
   display: flex;
+  font-family: "Poppins", sans-serif;
 }
 
 aside {
@@ -21,19 +20,18 @@ aside {
   width: 8vw;
 }
 
-.wrapper-tela {
+.container {
   width: 100%;
   padding: 20px 60px;
   color: #fff;
   display: flex;
-  flex-direction: column;
 }
 
-.wrapper-graficos {
-  width: 80%;
+.wrapper-left {
+  width: 100%;
 }
 
-header {
+.bem-vindo {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,16 +40,31 @@ header {
   color: #fff;
 }
 
-header input {
+.bem-vindo input {
   width: 15%;
   border-radius: 5px;
   border: none;
   outline: none;
+  padding: 8px;
+}
+
+.bem-vindo h1 {
+    font-size: 1.5em;
+}
+
+.any-title {
+    font-size: 1em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.teste {
+    width: 75%;
+  margin-right: 30px;
 }
 
 .grid-section-box {
   width: 100%;
-  padding: 20px 0;
 }
 
 .grid-section-box h1 {
@@ -81,4 +94,38 @@ header input {
   background-color: #353a50;
   border-radius: 10px;
   padding: 20px 0;
+  margin: 20px 0;
+}
+
+.total {
+  background-color: #353a50;
+  width: 20vw;
+  margin-bottom: 20px;
+}
+
+.container-graficos-outros {
+  display: flex;
+}
+
+.chart-container-donut {
+  width: 80%;
+  margin-right: 30px;
+}
+
+.chart-container-dispersao {
+    width: 40%;
+}
+
+.chart-container-bar {
+  width: 20vw;
+}
+
+.grafico-principal {
+  display: flex;
+}
+
+.left {
+  display: flex;
+  width: 75%;
+  margin-right: 30px;
 }
