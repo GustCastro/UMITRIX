@@ -99,10 +99,10 @@ const servidor = (
 
     // define os endpoints da API para cada tipo de sensor
     app.get('/sensores/sensorTemperaturaDHT11', (_, response) => {
-        return response.json(valoresUmidade);
+        return response.json(valoresTemperatura);
     });
     app.get('/sensores/sensorUmidadeDHT11', (_, response) => {
-        return response.json(valoresTemperatura);
+        return response.json(valoresUmidade);
     });
 }
 
