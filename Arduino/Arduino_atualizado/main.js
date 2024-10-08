@@ -20,8 +20,8 @@ const serial = async (
     let poolBancoDados = mysql.createPool(
         {
             host: 'localhost',
-            user: 'aluno',
-            password: 'sptech',
+            user: 'umitrix',
+            password: 'umitrix',
             database: 'Umitrix',
             port: 3306
         }
@@ -51,20 +51,20 @@ const serial = async (
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
         console.log(data);
         const valores = data.split(';');
-        const sensorTemperaturaDHT11 = parseInt(valores[0]);
-        const sensorUmidadeDHT11 = parseFloat(valores[1]);
+        const sensorTemperaturaDHT11 = parseFloat(valores[1]);
+        const sensorUmidadeDHT11 = parseFloat(valores[0]);
 
         // armazena os valores dos sensores nos arrays correspondentes
-        valoresUmidade.push(sensorUmidadeDHT11);
         valoresTemperatura.push(sensorTemperaturaDHT11);
+        valoresUmidade.push(sensorUmidadeDHT11);
 
         // insere os dados no banco de dados (se habilitado)
         if (HABILITAR_OPERACAO_INSERIR) {
 
             // este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
-                'INSERT INTO Registros (umidade, temperatura) VALUES (?, ?)',
-                [sensorUmidadeDHT11, sensorTemperaturaDHT11]
+                'INSERT INTO Registros (umidade, temperatura, nvAlerta, dtMedicao) VALUES (?, ?, ?, ?)',
+                [sensorUmidadeDHT11, sensorTemperaturaDHT11, 'Elevado', '2024-08-10']
             );
             console.log("valores inseridos no banco: ", sensorUmidadeDHT11 + ", " + sensorTemperaturaDHT11);
 
