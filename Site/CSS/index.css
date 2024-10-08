@@ -116,7 +116,7 @@ html {
 .banner {
   margin: 0;
   width: 100%;
-  background-image: url("https://s3-alpha-sig.figma.com/img/9134/af21/741b3ae5201e1a05978fd4c81919ecd9?Expires=1728259200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fAk6TXzCtsVUelHlhff4PbmInqWZjcwnNqvVYHsSRBab1FELbXnWxagK8MIx02oinZuWoux7UFR-yo1G3x7lYim9fmUtou1fb~9NffGxGe0QJNdtuTiLhHYPpSUyVOP62bL0La9UpgFk-fS5stpcpj~QIyZsWGAkxLO6HRmDI7Df-310g~dgbCjNS8OdZbY8hJhRgXLpLb1iDPGIapi47HXpLL8fluWq3U7qzwFQPEAKysbqdILru8-dwZP~onE1U7spArOUesuQSj-e7fNyQmf2dXcybRNEmI6b8NsC3Olaw64UzQMKJBVHXD0-sQu2x8DfuM4ADIPZ63qdO4zbwQ__");
+  background-image: url("https://www.figma.com/file/1DV7Fs5OeeNk7wi99fYwaS/image/9134af21741b3ae5201e1a05978fd4c81919ecd9");
   background-size: cover;
   height: 100vh;
   position: absolute;
@@ -138,7 +138,7 @@ html {
 }
 
 .container_banner h2 {
-  margin-top: 35vh;
+  margin-top: 15vh;
   width: 58vw;
   font-size: 2.9rem;
   text-align: center;
@@ -173,7 +173,7 @@ html {
 /* Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós */
 /* Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós Sobre Nós */
 
-.sobreNos {
+/* .sobreNos {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -204,7 +204,53 @@ html {
 
 .margin {
   margin-top: 30px;
+} */
+
+/* Seção Calculadora */
+.dashboard {
+  background-color: #1e2748;
+  color: #fff;
+
+  height: 100vh;
+  padding: 50px 0 50px 100px;
 }
+
+.dashboard h1 {
+  font-size: 35px;
+}
+
+.container_dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard_image {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-right: 0;
+}
+
+.dashboard_image img {
+  width: 44vw;
+  height: 60vh;
+  border-radius: 10px;
+}
+
+.text_dashboard {
+  width: 40vw;
+}
+
+.text_dashboard button {
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #000;
+  margin-top: 30px;
+}
+
 
 /* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
 /* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
