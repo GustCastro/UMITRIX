@@ -3,30 +3,25 @@ USE Umitrix;
 
 CREATE TABLE Empresa (
 idEmpresa int primary key auto_increment,
-nome varchar(45) not null,
-cnpj varchar(14) not null,
-email varchar(45) not null,
+razaoSocial varchar(45) not null,
+nomeFantasia varchar(45) not null,
+email varchar(45) not null UNIQUE,
+representanteLegal varchar(45) not null,
 senha varchar(30) not null,
 telefone varchar(15) not null
 );
-ALTER TABLE Empresa modify column cnpj varchar(18) not null;
-ALTER TABLE Empresa RENAME COLUMN nome to razaoSocial;
-ALTER TABLE Empresa ADD COLUMN nomeFantasia varchar(45);
-ALTER TABLE Empresa ADD COLUMN representanteLegal varchar(45);
 
 CREATE TABLE Endereco (
 idEndereco int primary key auto_increment,
-cep char(8) not null,
-estado char(2) not null,
+cep char(10) not null,
+uf char(2) not null,
 cidade varchar(35) not null,
 rua varchar(45) not null,
 numero varchar(7) not null,
 fkEmpresa int,
 constraint fkEnderecoEmpresa foreign key (fkEmpresa)
 	references Empresa(idEmpresa)
-    );
-    ALTER TABLE Endereco MODIFY COLUMN cep varchar(10) not null;
-    ALTER TABLE Endereco RENAME COLUMN estado to uf;
+);
 
 CREATE TABLE Estoque (
 idEstoque int primary key auto_increment,
@@ -57,25 +52,16 @@ constraint fkRegistrosSensor_DHT11 foreign key (fkSensor_DHT11)
 	references Sensor_DHT11 (idSensor)
 );
 
-INSERT INTO Empresa (nome, cnpj, email, senha, telefone) VALUES
-('Tech Innovations Ltda', '12.345.678/0001-95', 'contato@techinnovations.com.br', 'senhaSegura123', '(11) 98765-4321'),
-('Green Solutions S.A.', '98.765.432/0001-96', 'info@greensolutions.com.br', 'senhaVerde456', '(21) 99876-5432'),
-('Construtora Horizonte', '11.122.233/0001-97', 'atendimento@horizonte.com.br', 'construcao789', '(31) 91234-5678'),
-('Comércio de Alimentos Delícias', '44.455.566/0001-98', 'contato@delicias.com.br', 'gostoso101', '(41) 92345-6789'),
-('Serviços de Limpeza Brilhante', '77.788.899/0001-99', 'suporte@brilhante.com.br', 'limpeza202', '(51) 93456-7890');
-UPDATE Empresa SET nomeFantasia = 'TCA' WHERE idEmpresa = 1;
-UPDATE Empresa SET nomeFantasia = 'Soluções Verdes' WHERE idEmpresa = 2;
-UPDATE Empresa SET nomeFantasia = 'BHempreteira' WHERE idEmpresa = 3;
-UPDATE Empresa SET nomeFantasia = 'CAD.food' WHERE idEmpresa = 4;
-UPDATE Empresa SET nomeFantasia = 'Serviços Brilho' WHERE idEmpresa = 5;
-UPDATE Empresa SET representanteLegal = 'Jorge Luiz' WHERE idEmpresa = 1;
-UPDATE Empresa SET representanteLegal = 'Afonso Rubens' WHERE idEmpresa = 2;
-UPDATE Empresa SET representanteLegal = 'Luiz Diaz' WHERE idEmpresa = 3;
-UPDATE Empresa SET representanteLegal = 'Guilherme Brigs' WHERE idEmpresa = 4;
-UPDATE Empresa SET representanteLegal = 'Caio Ribeiro' WHERE idEmpresa = 5;
+INSERT INTO Empresa (razaoSocial, nomeFantasia, email, representanteLegal, senha, telefone) VALUES 
+('Tech Solutions LTDA', 'TechSol', 'contato@techsol.com', 'Carlos Silva', 'senha123', '(11) 98765-4321'),
+('Inova Comércio e Serviços', 'Inova', 'inova@inovacom.com', 'Ana Souza', 'senha456', '(21) 91234-5678'),
+('Alpha Tecnologia', 'AlphaTech', 'contato@alphatech.com', 'Roberto Lima', 'senha789', '(31) 99876-5432'),
+('Nova Era Consultoria', 'NovaEra', 'contato@novaera.com', 'Mariana Santos', 'senha321', '(41) 98765-4321'),
+('Omega Indústria Ltda', 'Omega', 'omega@indltda.com', 'José Ferreira', 'senha654', '(51) 97654-3210');
 
 
-INSERT INTO Endereco (cep, estado, cidade, rua, numero, fkEmpresa) VALUES
+
+INSERT INTO Endereco (cep, uf, cidade, rua, numero, fkEmpresa) VALUES
 ('01001-000', 'SP', 'São Paulo', 'Rua da Consolação', '123-a', 1),
 ('22222-222', 'RJ', 'Rio de Janeiro', 'Avenida Atlântica', '456', 2),
 ('30000-000', 'MG', 'Belo Horizonte', 'Rua das Flores', '789', 3),
@@ -95,6 +81,7 @@ INSERT INTO Sensor_DHT11 (dtInstalacao, fkEstoque) VALUES
 ('2023-03-05', 2),
 ('2023-04-20', 3),
 ('2023-05-30', 4);
+
 INSERT INTO Sensor_DHT11 (dtInstalacao, fkEstoque) VALUES
 ('2023-02-12', 5);
 
