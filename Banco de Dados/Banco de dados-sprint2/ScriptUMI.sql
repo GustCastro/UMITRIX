@@ -5,6 +5,7 @@ CREATE TABLE Empresa (
 idEmpresa int primary key auto_increment,
 razaoSocial varchar(45) not null,
 nomeFantasia varchar(45) not null,
+cnpj varchar(18) UNIQUE,
 email varchar(45) not null UNIQUE,
 representanteLegal varchar(45) not null,
 senha varchar(30) not null,
@@ -18,7 +19,7 @@ uf char(2) not null,
 cidade varchar(35) not null,
 rua varchar(45) not null,
 numero varchar(7) not null,
-fkEmpresa int,
+fkEmpresa int unique,
 constraint fkEnderecoEmpresa foreign key (fkEmpresa)
 	references Empresa(idEmpresa)
 );
@@ -52,14 +53,13 @@ constraint fkRegistrosSensor_DHT11 foreign key (fkSensor_DHT11)
 	references Sensor_DHT11 (idSensor)
 );
 
-INSERT INTO Empresa (razaoSocial, nomeFantasia, email, representanteLegal, senha, telefone) VALUES 
-('Tech Solutions LTDA', 'TechSol', 'contato@techsol.com', 'Carlos Silva', 'senha123', '(11) 98765-4321'),
-('Inova Comércio e Serviços', 'Inova', 'inova@inovacom.com', 'Ana Souza', 'senha456', '(21) 91234-5678'),
-('Alpha Tecnologia', 'AlphaTech', 'contato@alphatech.com', 'Roberto Lima', 'senha789', '(31) 99876-5432'),
-('Nova Era Consultoria', 'NovaEra', 'contato@novaera.com', 'Mariana Santos', 'senha321', '(41) 98765-4321'),
-('Omega Indústria Ltda', 'Omega', 'omega@indltda.com', 'José Ferreira', 'senha654', '(51) 97654-3210');
-
-
+INSERT INTO Empresa (razaoSocial, nomeFantasia, cnpj, email, representanteLegal, senha, telefone)
+VALUES 
+('Tech Solutions Ltda.', 'TechSol', '12.345.678/0001-90', 'contato@techsol.com', 'Carlos Almeida', 'senha123', '(11) 1234-5678'),
+('Super Mercados União Ltda.', 'União Super', '98.765.432/0001-88', 'suporte@uniaosuper.com', 'Mariana Rocha', 'senha456', '(21) 8765-4321'),
+('Construtora Ideal S/A', 'Ideal Construtora', '32.109.876/0001-65', 'vendas@ideal.com', 'João Mendes', 'senha789', '(31) 1098-7654'),
+('Agro Brasil Ltda.', 'AgroBrasil', '56.210.345/0001-32', 'info@agrobrasil.com', 'Ana Souza', 'senha321', '(51) 2103-4567'),
+('Moveis Classicos Ltda.', 'Móveis Clássicos', '78.345.210/0001-54', 'contato@moveisclassicos.com', 'Pedro Martins', 'senha654', '(41) 3452-1078');
 
 INSERT INTO Endereco (cep, uf, cidade, rua, numero, fkEmpresa) VALUES
 ('01001-000', 'SP', 'São Paulo', 'Rua da Consolação', '123-a', 1),
