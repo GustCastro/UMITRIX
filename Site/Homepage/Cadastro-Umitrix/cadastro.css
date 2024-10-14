@@ -21,8 +21,8 @@ body {
 }
 
 .navBar_cadastro img {
-  height: 130px;
-  width: 130px;
+  height: 150px;
+  width: 150px;
   display: flex;
   margin-top: 20px;
 }
@@ -146,7 +146,7 @@ h2 {
   width: 295px;
 }
 .campo_numero {
-  width: 74px;
+  width: 80px;
 }
 .campo_cep {
   width: 130px;
