@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Umitrix</title>
+    <link rel="stylesheet" href="Login.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Login - Umitrix </title>
-    <link rel="stylesheet" href="Login.css">
-</head>
+  <body>
+    <div class="main-container">
+      <div class="form-container">
+        <h1>
+          <a href="../index.html">
+            <img width="80" height="80" src="Imagem2.png" />
+          </a>
+        </h1>
+        <form>
+          <label> Digite seu email: </label>
+          <div class="input-container">
+            <input type="Email" placeholder="Email" required />
+            <img
+              width="25"
+              height="25"
+              src="https://img.icons8.com/ios/50/user--v1.png"
+              alt="user--v1"
+            />
+          </div>
+          <label> Digite seu senha: </label>
+          <div class="input-container">
+            <input type="password" placeholder="Senha" required />
+            <img
+              width="25"
+              height="25"
+              src="https://img.icons8.com/ios/50/lock-2.png"
+              alt="lock-2"
+            />
+          </div>
+          <button type="submit" class="submit-button">Login</button>
+        </form>
+      </div>
 
-<body>
-        <div class="main-container">
-        <div class="form-container">
-            <h1>
-                <img width="80" height="80"
-                    src="Imagem2.png">
-            </h1>
-            <form>
-                <label> Digite seu email: </label>
-                <div class="input-container">
-                    <input type="Email" placeholder="Email" required>
-                    <img width="25" height="25" src="https://img.icons8.com/ios/50/user--v1.png" alt="user--v1"/>
-                </div>
-                <label> Digite seu senha: </label>
-                <div class="input-container">
-                    <input type="password" placeholder="Senha" required>
-                    <img width="25" height="25" src="https://img.icons8.com/ios/50/lock-2.png" alt="lock-2"/>
-                </div>
-                <button type="submit" class="submit-button">Login</button>
-            </form>
+      <center>
+        <div class="car-container">
+          <p>
+            Ainda não tem <br />
+            cadastro?
+          </p>
+          <a href="../Cadastro-Umitrix/cadastro.html">
+            <button class="button_car" onclick="CadastreSe()">
+              Cadastre-se
+            </button>
+          </a>
         </div>
-
-        <center>
-            <div class="car-container">
-                <p>Ainda não tem <br> cadastro?</p>
-                <button class="button_car" onclick="CadastreSe()">
-                    Cadastre-se
-                </button>
-            </div>
-        </center>
+      </center>
     </div>
-
-</body>
-
+  </body>
 </html>
