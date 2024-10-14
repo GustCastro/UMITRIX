@@ -18,13 +18,8 @@
 
         <div class="inputs_coluna">
           <div class="input_maior">
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              id="Email"
-              placeholder="Digite o e-mail"
-              required
-            />
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" placeholder="Digite o e-mail" />
           </div>
           <div class="inputs_menores">
             <div class="div_menores">
@@ -34,7 +29,6 @@
                 id="razaoSocial"
                 class="campos"
                 placeholder="Nome da empresa"
-                required
               />
             </div>
             <div class="div_menores">
@@ -46,7 +40,6 @@
                 placeholder="00.000.000/0001-00"
                 max="18"
                 min="18"
-                required
               />
             </div>
           </div>
@@ -58,10 +51,9 @@
                 id="RepresentanteLegal"
                 class="campos"
                 placeholder="Representante legal"
-                required
               />
             </div>
-            <div class="div_menores">
+            <div class="div_menores cnpj_class">
               <label for="Telefone">Telefone:</label>
               <input
                 type="text"
@@ -69,7 +61,6 @@
                 class="campos"
                 placeholder="Tel"
                 max="15"
-                required
               />
             </div>
           </div>
@@ -81,17 +72,15 @@
                 id="Senha"
                 class="campos"
                 placeholder="Digite a senha"
-                required
               />
             </div>
-            <div class="div_menores">
+            <div class="div_menores cnpj_class">
               <label for="RepetirSenha">Repetir senha:</label>
               <input
                 type="password"
                 id="RepetirSenha"
                 class="campos"
                 placeholder="Confirme a senha"
-                required
               />
             </div>
           </div>
@@ -104,10 +93,9 @@
                 id="Cidade"
                 class="campos campo_cidade"
                 placeholder="Digite a cidade"
-                required
               />
             </div>
-            <div class="div_menores">
+            <div class="div_menores cnpj_class">
               <label for="UF">UF:</label>
               <select id="UF" class="ufs">
                 <option value="" disabled selected>UF</option>
@@ -150,7 +138,6 @@
                 id="Rua"
                 class="campos campo_rua"
                 placeholder="Rua"
-                required
               />
             </div>
             <div class="div_menores">
@@ -160,7 +147,6 @@
                 id="numero"
                 class="campos campo_numero"
                 placeholder="Num"
-                required
               />
             </div>
             <div class="div_menores">
@@ -170,18 +156,17 @@
                 id="CEP"
                 class="campos campo_cep"
                 placeholder="00000-000"
-                required
               />
             </div>
           </div>
 
           <div class="div_btn">
-            <button type="submit" class="btn_cadastrar">Cadastrar</button>
+            <button class="btn_cadastrar">Cadastrar</button>
           </div>
           <div class="msg_login">
             <p>Já possui login?</p>
             <div class="link">
-              <a href="../Login-Umitrix/Login-Umitrix.html">Login</a>
+              <a href="..">Login</a>
             </div>
           </div>
         </div>
