@@ -40,34 +40,14 @@ html {
   background-color: red;
 }
 
-/* #myBtn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: red;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 4px;
-  }
-  
-  #myBtn:hover {
-    background-color: #555;
-  } */
-
 .navBar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  position: fixed;
+  height: 100px;
   z-index: 10;
-  background-color: #272727;
+  background-color: #2f3254;
 }
 
 .container_navBar {
@@ -210,7 +190,6 @@ html {
 .dashboard {
   background-color: #1e2748;
   color: #fff;
-
   height: 100vh;
   padding: 50px 0 50px 100px;
 }
@@ -222,24 +201,30 @@ html {
 .container_dashboard {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center;  
+  z-index: 5;
 }
 
 .dashboard_image {
   padding: 30px;
   background-color: #fff;
-  border-radius: 10px;
+  border-top-left-radius: 72px;
+  border-bottom-left-radius: 72px;
   padding-right: 0;
+  z-index: 5;
 }
 
 .dashboard_image img {
   width: 44vw;
   height: 60vh;
-  border-radius: 10px;
+  border-top-left-radius: 36px;
+  border-bottom-left-radius: 36px;
+  z-index: 5;
 }
 
 .text_dashboard {
   width: 40vw;
+  z-index: 5;
 }
 
 .text_dashboard button {
@@ -249,8 +234,27 @@ html {
   text-decoration: none;
   color: #000;
   margin-top: 30px;
+  z-index: 5;
 }
 
+.dashboard .detail1 {
+  position: absolute;
+  z-index: 0;
+  height: 330px;
+  width: 352px;
+  rotate: 45deg;
+  left: 800px;
+}
+
+.dashboard .detail2 {
+  position: absolute;
+  z-index: 0;
+  height: 330px;
+  width: 352px;
+  rotate: 45deg;
+  left: 1150px;
+  top: 1250px;
+}
 
 /* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
 /* Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo Objetivo  */
@@ -271,21 +275,33 @@ html {
 .container_objetivo {
   height: auto;
   width: 592px;
+  z-index: 5;
 }
 
 .objetivo_img img {
+  position: relative;
   height: 529px;
   width: 571px;
+  z-index: 5;
 }
 
 .container_objetivo h2 {
   font-weight: 600;
   font-size: 35px;
+  z-index: 5;
 }
 
 .container_objetivo p {
   font-weight: 400;
   font-size: 18px;
+  z-index: 5;
+}
+
+.objetivo .detail3 {
+  position: absolute;
+  z-index: 1;
+  left: 565px;
+  margin-bottom: 90px;;
 }
 
 /* calculadora */
@@ -528,7 +544,7 @@ footer {
   flex-direction: column;
   position: relative;
   padding: 10px 30px;
-  background-color: #272727;
+  background-color: #2f3254;
 }
 
 footer .logo {
