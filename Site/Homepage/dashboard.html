@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
@@ -14,9 +14,9 @@
     <aside>
         <div class="menu">
             <ul>
-                <li><a href="#"><i class="fa fa-home"></i></a></li>
-                <li><a href="#"><i class="fa fa-users"></i></a></li>
-                <li><a href="#"><i class="fa fa-users"></i></a></li>
+                <li class="main-icon-home"><a href="#"><i class="fa fa-home"></i></a></li>
+                <li><a href="#"><i class="fa fa-tachometer"></i></a></li>
+                <li><a href="#"><i class="fa fa-wrench"></i></a></li>
                 <li><a href="#"><i class="fa fa-users"></i></a></li>
             </ul>
         </div>
@@ -28,45 +28,73 @@
                 <h1>Olá, Loja XPTO!</h1>
                 <input type="search" name="" id="" placeholder="Search">
             </div>
-            
+
             <div class="any-title">
                 <h1>Computadores em estoque</h1>
             </div>
 
             <div class="grafico-principal">
-                <div class="teste">
+                <div class="wrapper-boxes">
                     <section class="grid-section-box">
                         <div class="grid-box">
-                            <div class="box1"></div>
-                            <div class="box2"></div>
-                            <div class="box3"></div>
+                            <div class="box1">
+                                <span class="wh-text">Quantidade de sensores</span>
+                                <h1 class="wh-text mt-10">XX</h1>
+                            </div>
+                            <div class="box2">
+                                <span class="wh-text">Lorem ipsum dolor sit amet.</span>
+                                <h1 class="wh-text mt-10">XX</h1>
+                            </div>
+                            <div class="box3">
+                                <span class="wh-text">Lorem ipsum dolor sit.</span>
+                                <h1 class="wh-text mt-10">XX</h1>
+                            </div>
                         </div>
                     </section>
 
                     <section class="chart-container">
-                        <canvas id="myChart" style="position: relative; height:30vh; width:40vw"></canvas>
+                        <canvas id="myChart" style="position: relative; height:45vh; width:100%"></canvas>
                     </section>
                 </div>
                 <section class="total">
                     <div class="total-valor1">
-                        <h2>Total de computadores</h2>
-                        <p>R$ 1.500.000,00</p>
+                        <h3 class="m20-0">Total de computadores</h3>
+                        <h1>R$ 1.500.000,00</h1>
                     </div>
                     <div class="total-valor2">
-
-                        <h2>Custo total do estoque</h2>
-                        <p>R$ 1.500.000,00</p>
+                        <h3 class="m20-0">Custo total do estoque</h3>
+                        <h1>R$ 1.500.000,00</h1>
                     </div>
                 </section>
             </div>
             <div class="container-graficos-outros">
                 <div class="left">
-                    <section class="chart-container chart-container-donut">
-                        <canvas id="myChartPie" style="position: relative; height:20vh; width:100%"></canvas>
+                    <section class="chart-container chart-container-doughnut">
+                        <p>Downtime Causes</p>
+                        <div class="donut-wrapper">
+                            <canvas id="myChartPie"></canvas>
+                            <div class="legenda-doughnut">
+                                <div class="legenda-item">
+                                    <div class="circle">
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Software</span>
+                                    </div>
+                                    <div class="circle">
+
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Hardware</span>
+                                    </div>
+                                    <div class="circle">
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Infraestrutura</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
 
                     <section class="chart-container chart-container-dispersao">
-                        <canvas id="myChartPie" style="position: relative; height:20vh; width:100%"></canvas>
+                        <canvas id="myChartScatter" style="position: relative; height:20vh; width:100%"></canvas>
                     </section>
                 </div>
                 <section class="chart-container chart-container-bar">
@@ -88,20 +116,20 @@
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+            labels: [
+                '1 AM',
+                '2 AM',
+                '3 AM',
+                '4 AM',
+                '5 AM',
+                '6 AM',
+            ],
             datasets: [
                 {
                     label: 'Temperatura média',
                     data: [22, 24, 27, 23, 20, 18],
                     backgroundColor: '#fff',
                     borderColor: '#fff',
-                    borderWidth: 3
-                },
-                {
-                    label: 'Umidade (%)',
-                    data: [90, 89, 93, 87, 88, 82],
-                    backgroundColor: '#c33',
-                    borderColor: '#c33',
                     borderWidth: 3
                 }
             ]
@@ -116,23 +144,111 @@
         }
     });
 
-    const ctx2 = document.getElementById('myChartPie');
-    const DATA_COUNT = 5;
-    const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 };
+    const ctx2 = document.getElementById('myChartScatter');
+
+    const data = {
+        datasets: [{
+            label: 'Temperatura',
+            data: [{
+                x: 1,
+                y: 22
+            }, {
+                x: 2,
+                y: 24
+            }, {
+                x: 3,
+                y: 27
+            }, {
+                x: 4,
+                y: 23
+            }, {
+                x: 5,
+                y: 20
+            }, {
+                x: 6,
+                y: 18
+            }],
+            borderColor: '#c33',
+            backgroundColor: '#c33',
+            borderWidth: 5
+
+        }],
+    };
+
     new Chart(ctx2, {
-        type: 'doughnut',
-        data: {
-            labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
-            datasets: [
-                {
-                    label: 'Dataset 1',
-                    data: Utils.numbers(NUMBER_CFG),
-                    backgroundColor: Object.values(Utils.CHART_COLORS),
+        type: 'scatter',
+        data: data,
+        options: {
+            scales: {
+                x: {
+                    type: 'linear',
+                    position: 'bottom',
                 }
-            ]
-        },
+            }
+        }
+    });
+
+
+    const dataPie = {
+        // labels: [
+        //     'Red',
+        //     'Blue',
+        //     'Yellow'
+        // ],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [300, 50, 100],
+            backgroundColor: [
+                'rgb(255, 99, 132)',
+                'rgb(54, 162, 235)',
+                'rgb(255, 205, 86)'
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    const ctx3 = document.getElementById('myChartPie');
+    new Chart(ctx3, {
+        type: 'doughnut',
+        data: dataPie,
         options: {
             responsive: true,
+        }
+    });
+
+
+    const ctx4 = document.getElementById('myChartBar');
+
+    const dataBar = {
+        labels: [
+            '1 AM',
+            '2 AM',
+            '3 AM',
+            '4 AM',
+            '5 AM',
+            '6 AM',
+            '7 AM',
+        ],
+        datasets: [{
+            label: 'Temperatura',
+            data: [22, 24, 27, 23, 20, 18, 22],
+            backgroundColor: [
+                'rgba(408, 12, 12, 0.2)',
+                'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+                'rgba(500, 33, 33, 1.2)',
+
+                'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    new Chart(ctx4, {
+        type: 'bar',
+        data: dataBar,
+        options: {
             scales: {
                 y: {
                     beginAtZero: true
@@ -140,4 +256,7 @@
             }
         }
     });
+
+
+    new Chart(ctx4, config);
 </script>
