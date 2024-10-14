@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cadastro.css" />
+    <title>Cadastro - Umitrix</title>
+  </head>
+  <body>
+    <header>
+      <div class="navBar_cadastro">
+        <img
+          src="../Repositório-UMITRIX/UMITRIX/Site/src/Imagem2.png"
+          alt="Logo"
+        />
+      </div>
+    </header>
+    <div class="container_cadastro">
+      <div class="formulario_cadastro">
+        <h2>Cadastre sua empresa!</h2>
+
+        <div class="inputs_coluna">
+          <div class="input_maior">
+            <label for="Email">Email:</label>
+            <input type="text" id="Email" placeholder="Digite o e-mail" />
+          </div>
+          <div class="inputs_menores">
+            <div class="div_menores">
+              <label for="razaoSocial">Razão social:</label>
+              <input
+                type="text"
+                id="razaoSocial"
+                class="campos"
+                placeholder="Nome da empresa"
+              />
+            </div>
+            <div class="div_menores">
+              <label for="CNPJ">CNPJ:</label>
+              <input
+                type="text"
+                id="CNPJ"
+                class="campos"
+                placeholder="00.000.000/0001-00"
+                max="18"
+                min="18"
+              />
+            </div>
+          </div>
+          <div class="inputs_menores">
+            <div class="div_menores">
+              <label for="RepresentanteLegal">Representante Legal:</label>
+              <input
+                type="text"
+                id="RepresentanteLegal"
+                class="campos"
+                placeholder="Representante legal"
+              />
+            </div>
+            <div class="div_menores cnpj_class">
+              <label for="Telefone">Telefone:</label>
+              <input
+                type="text"
+                id="Telefone"
+                class="campos"
+                placeholder="Tel"
+                max="15"
+              />
+            </div>
+          </div>
+          <div class="inputs_menores">
+            <div class="div_menores">
+              <label for="Senha">Senha:</label>
+              <input
+                type="password"
+                id="Senha"
+                class="campos"
+                placeholder="Digite a senha"
+              />
+            </div>
+            <div class="div_menores cnpj_class">
+              <label for="RepetirSenha">Repetir senha:</label>
+              <input
+                type="password"
+                id="RepetirSenha"
+                class="campos"
+                placeholder="Confirme a senha"
+              />
+            </div>
+          </div>
+
+          <div class="inputs_menores endereços">
+            <div class="div_menores">
+              <label for="Cidade">Cidade:</label>
+              <input
+                type="text"
+                id="Cidade"
+                class="campos campo_cidade"
+                placeholder="Digite a cidade"
+              />
+            </div>
+            <div class="div_menores cnpj_class">
+              <label for="UF">UF:</label>
+              <select id="UF" class="ufs">
+                <option value="" disabled selected>UF</option>
+
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputs_menores">
+            <div class="div_menores">
+              <label for="Rua">Rua:</label>
+              <input
+                type="text"
+                id="Rua"
+                class="campos campo_rua"
+                placeholder="Rua"
+              />
+            </div>
+            <div class="div_menores">
+              <label for="numero">Nª:</label>
+              <input
+                type="text"
+                id="numero"
+                class="campos campo_numero"
+                placeholder="Num"
+              />
+            </div>
+            <div class="div_menores">
+              <label for="CEP">CEP:</label>
+              <input
+                type="text"
+                id="CEP"
+                class="campos campo_cep"
+                placeholder="00000-000"
+              />
+            </div>
+          </div>
+
+          <div class="div_btn">
+            <button class="btn_cadastrar">Cadastrar</button>
+          </div>
+          <div class="msg_login">
+            <p>Já possui login?</p>
+            <div class="link">
+              <a href="">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
