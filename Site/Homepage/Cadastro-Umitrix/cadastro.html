@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="cadastro.css" />
+    <link
+      rel="shortcut icon"
+      href="../../src/favicon_io/favicon.ico"
+      type="image/x-icon"
+    />
 
-    <title>Cadastro - Umitrix</title>
+    <title>| Cadastro - Umitrix</title>
   </head>
   <body>
     <header>
@@ -51,8 +56,6 @@
                   id="CNPJ"
                   class="campos"
                   placeholder="00.000.000/0001-00"
-                  max="18"
-                  min="18"
                   required
                 />
               </div>
@@ -75,7 +78,6 @@
                   id="Telefone"
                   class="campos"
                   placeholder="Tel"
-                  max="15"
                   required
                 />
               </div>
@@ -89,7 +91,19 @@
                   class="campos"
                   placeholder="Digite a senha"
                   required
+                  max="12"
+                  min="12"
                 />
+                <button
+                  type="button"
+                  onclick="gerarSenha()"
+                  class="btn_sugerir"
+                >
+                  Sugerir
+                </button>
+                <span id="senhaSugerida" class="senha_sugerida"
+                  >Senha sugerida:
+                </span>
               </div>
               <div class="div_menores">
                 <label for="RepetirSenha">Repetir senha:</label>
@@ -99,6 +113,8 @@
                   class="campos"
                   placeholder="Confirme a senha"
                   required
+                  max="12"
+                  min="12"
                 />
               </div>
             </div>
@@ -192,5 +208,23 @@
         </form>
       </div>
     </div>
+    <script>
+      function gerarSenha() {
+        const caracteres =
+          "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+        let senha = "";
+        const tamanhoSenha = 12; // Defina o tamanho desejado para a senha
+
+        for (let i = 0; i < tamanhoSenha; i++) {
+          const indice = Math.floor(Math.random() * caracteres.length);
+          senha += caracteres[indice];
+        }
+
+        // Exibe a senha sugerida no span
+        document.getElementById(
+          "senhaSugerida"
+        ).textContent = `Senha sugerida: ${senha}`;
+      }
+    </script>
   </body>
 </html>
