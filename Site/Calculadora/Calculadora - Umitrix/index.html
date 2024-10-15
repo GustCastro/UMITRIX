@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Imgs/logo Umitrix - Texto Branco.png" type="image/x-icon">
+    <title>Calculadora Financeira - Umitrix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1>Calcule o prejuizo estimado do seu Estoque</h1>
+
+        <p> Informe o valor da aquisição dos aparelhos </p>
+        <input type="number" id="custo_da_aquisicao" placeholder="ex:R$10000" class="input-style"><br>
+
+        <p> Informe a quantidade de produtos adquiridos </p>
+        <input type="number" id="quantidade" placeholder="ex:1500" class="input-style"><br>
+
+        <p> Informe a região ou estado do seu estoque</p>
+        <input type="text" id="regiao_do_estoque" placeholder="ex:São Paulo" class="input-style"><br>
+
+        <button onclick="CalcularPrejuizo()">Prejuizo Total</button>
+    </div>
+    <br>
+
+
+    <div id="exibir"></div>
+</body>
+
+</html>
+
+
+<script>
+    function CalcularPrejuizo() {
+        var CustoAquisicao = Number(custo_da_aquisicao.value)
+        var QtdPeodutos = Number(quantidade.value)
+        var RegiaoEstoque = regiao_do_estoque.value
+
+
+        var custoTotalAquisicao = custoAquisicao * quantidadeValor
+        var depreciacao = ((taxaDepreciacaoAnual / 100) / 2) * custoTotalAquisicao
+        var danos = (percentualDanos / 100) * custoTotalAquisicao
+
+        var prejuizo = custoTotalAquisicao + custoTotalArmazenagem + depreciacao + danos
+
+        var custoSemDanos = custoTotalAquisicao + custoTotalArmazenagem + depreciacao
+
+        var danoEvitado = danos
+
+        prejuizo = prejuizo.toFixed(2)
+        danoEvitado = danoEvitado.toFixed(2)
+
+        exibir.innerHTML = `
+        O custo da aquisição segundo o principio contábil é de: <b>R$${custoTotalAquisicao}</b><br>
+        O custo da amarzenagem de segundo os calculos sobre Gestão de Estoque: <b>R$${custoArmazenagemMensal}</b><br>
+        Já calculo de Depreciação segundo os Principios Contaveis é de: <b>R$${depreciacao}</b><br>
+       
+        Prejuízo total com danos: <b>R$ ${prejuizo}</b><br><br>
+         
+        Danos causados por Temperautura segundo calculos da Engenharia de Confiabiliade <b>R$${danos}</b><br>   `
+    }
+
+
+</script>
