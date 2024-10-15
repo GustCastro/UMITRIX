@@ -1,262 +1,262 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard Umitrix</title>
-    <link rel="stylesheet" href="../CSS/dashboard.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <aside>
-        <div class="menu">
-            <ul>
-                <li class="main-icon-home"><a href="#"><i class="fa fa-home"></i></a></li>
-                <li><a href="#"><i class="fa fa-tachometer"></i></a></li>
-                <li><a href="#"><i class="fa fa-wrench"></i></a></li>
-                <li><a href="#"><i class="fa fa-users"></i></a></li>
-            </ul>
-        </div>
+      <div class="menu">
+        <ul>
+          <li class="main-icon-home">
+            <a href="#"><i class="fa fa-home"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-tachometer"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-wrench"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa fa-users"></i></a>
+          </li>
+        </ul>
+      </div>
     </aside>
 
     <div class="container">
-        <div class="wrapper-left">
-            <div class="bem-vindo">
-                <h1>Olá, Loja XPTO!</h1>
-                <input type="search" name="" id="" placeholder="Search">
-            </div>
-
-            <div class="any-title">
-                <h1>Computadores em estoque</h1>
-            </div>
-
-            <div class="grafico-principal">
-                <div class="wrapper-boxes">
-                    <section class="grid-section-box">
-                        <div class="grid-box">
-                            <div class="box1">
-                                <span class="wh-text">Quantidade de sensores</span>
-                                <h1 class="wh-text mt-10">XX</h1>
-                            </div>
-                            <div class="box2">
-                                <span class="wh-text">Lorem ipsum dolor sit amet.</span>
-                                <h1 class="wh-text mt-10">XX</h1>
-                            </div>
-                            <div class="box3">
-                                <span class="wh-text">Lorem ipsum dolor sit.</span>
-                                <h1 class="wh-text mt-10">XX</h1>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="chart-container">
-                        <canvas id="myChart" style="position: relative; height:45vh; width:100%"></canvas>
-                    </section>
-                </div>
-                <section class="total">
-                    <div class="total-valor1">
-                        <h3 class="m20-0">Total de computadores</h3>
-                        <h1>R$ 1.500.000,00</h1>
-                    </div>
-                    <div class="total-valor2">
-                        <h3 class="m20-0">Custo total do estoque</h3>
-                        <h1>R$ 1.500.000,00</h1>
-                    </div>
-                </section>
-            </div>
-            <div class="container-graficos-outros">
-                <div class="left">
-                    <section class="chart-container chart-container-doughnut">
-                        <p>Downtime Causes</p>
-                        <div class="donut-wrapper">
-                            <canvas id="myChartPie"></canvas>
-                            <div class="legenda-doughnut">
-                                <div class="legenda-item">
-                                    <div class="circle">
-                                        <div class="legenda-item-circle"></div>
-                                        <span>Software</span>
-                                    </div>
-                                    <div class="circle">
-
-                                        <div class="legenda-item-circle"></div>
-                                        <span>Hardware</span>
-                                    </div>
-                                    <div class="circle">
-                                        <div class="legenda-item-circle"></div>
-                                        <span>Infraestrutura</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="chart-container chart-container-dispersao">
-                        <canvas id="myChartScatter" style="position: relative; height:20vh; width:100%"></canvas>
-                    </section>
-                </div>
-                <section class="chart-container chart-container-bar">
-                    <canvas id="myChartBar" style="position: relative; height:20vh; width:100%"></canvas>
-                </section>
-            </div>
+      <div class="wrapper-left">
+        <div class="bem-vindo">
+          <h1>Olá, Loja XPTO!</h1>
+          <input type="search" name="" id="" placeholder="Search" />
         </div>
 
+        <div class="any-title">
+          <h1>Computadores em estoque</h1>
+        </div>
+
+        <div class="grafico-principal">
+          <div class="wrapper-boxes">
+            <section class="grid-section-box">
+              <div class="grid-box">
+                <div class="box1">
+                  <span class="wh-text">Quantidade de sensores</span>
+                  <h1 class="wh-text mt-10">XX</h1>
+                </div>
+                <div class="box2">
+                  <span class="wh-text">Lorem ipsum dolor sit amet.</span>
+                  <h1 class="wh-text mt-10">XX</h1>
+                </div>
+                <div class="box3">
+                  <span class="wh-text">Lorem ipsum dolor sit.</span>
+                  <h1 class="wh-text mt-10">XX</h1>
+                </div>
+              </div>
+            </section>
+
+            <section class="chart-container">
+              <canvas
+                id="myChart"
+                style="position: relative; height: 45vh; width: 100%"
+              ></canvas>
+            </section>
+          </div>
+          <section class="total">
+            <div class="total-valor1">
+              <h3 class="m20-0">Total de computadores</h3>
+              <h1>R$ 1.500.000,00</h1>
+            </div>
+            <div class="total-valor2">
+              <h3 class="m20-0">Custo total do estoque</h3>
+              <h1>R$ 1.500.000,00</h1>
+            </div>
+          </section>
+        </div>
+        <div class="container-graficos-outros">
+          <div class="left">
+            <section class="chart-container chart-container-doughnut">
+              <p>Downtime Causes</p>
+              <div class="donut-wrapper">
+                <canvas id="myChartPie"></canvas>
+                <div class="legenda-doughnut">
+                  <div class="legenda-item">
+                    <div class="circle">
+                      <div class="legenda-item-circle"></div>
+                      <span>Software</span>
+                    </div>
+                    <div class="circle">
+                      <div class="legenda-item-circle"></div>
+                      <span>Hardware</span>
+                    </div>
+                    <div class="circle">
+                      <div class="legenda-item-circle"></div>
+                      <span>Infraestrutura</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="chart-container chart-container-dispersao">
+              <canvas
+                id="myChartScatter"
+                style="position: relative; height: 20vh; width: 100%"
+              ></canvas>
+            </section>
+          </div>
+          <section class="chart-container chart-container-bar">
+            <canvas
+              id="myChartBar"
+              style="position: relative; height: 20vh; width: 100%"
+            ></canvas>
+          </section>
+        </div>
+      </div>
     </div>
-
-
-</body>
-
+  </body>
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    const ctx = document.getElementById('myChart');
+  const ctx = document.getElementById("myChart");
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: [
-                '1 AM',
-                '2 AM',
-                '3 AM',
-                '4 AM',
-                '5 AM',
-                '6 AM',
-            ],
-            datasets: [
-                {
-                    label: 'Temperatura média',
-                    data: [22, 24, 27, 23, 20, 18],
-                    backgroundColor: '#fff',
-                    borderColor: '#fff',
-                    borderWidth: 3
-                }
-            ]
+  new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: ["1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM"],
+      datasets: [
+        {
+          label: "Temperatura média",
+          data: [22, 24, 27, 23, 20, 18],
+          backgroundColor: "#fff",
+          borderColor: "#fff",
+          borderWidth: 3,
         },
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
 
-    const ctx2 = document.getElementById('myChartScatter');
+  const ctx2 = document.getElementById("myChartScatter");
 
-    const data = {
-        datasets: [{
-            label: 'Temperatura',
-            data: [{
-                x: 1,
-                y: 22
-            }, {
-                x: 2,
-                y: 24
-            }, {
-                x: 3,
-                y: 27
-            }, {
-                x: 4,
-                y: 23
-            }, {
-                x: 5,
-                y: 20
-            }, {
-                x: 6,
-                y: 18
-            }],
-            borderColor: '#c33',
-            backgroundColor: '#c33',
-            borderWidth: 5
-
-        }],
-    };
-
-    new Chart(ctx2, {
-        type: 'scatter',
-        data: data,
-        options: {
-            scales: {
-                x: {
-                    type: 'linear',
-                    position: 'bottom',
-                }
-            }
-        }
-    });
-
-
-    const dataPie = {
-        // labels: [
-        //     'Red',
-        //     'Blue',
-        //     'Yellow'
-        // ],
-        datasets: [{
-            label: 'My First Dataset',
-            data: [300, 50, 100],
-            backgroundColor: [
-                'rgb(255, 99, 132)',
-                'rgb(54, 162, 235)',
-                'rgb(255, 205, 86)'
-            ],
-            hoverOffset: 4
-        }]
-    };
-
-    const ctx3 = document.getElementById('myChartPie');
-    new Chart(ctx3, {
-        type: 'doughnut',
-        data: dataPie,
-        options: {
-            responsive: true,
-        }
-    });
-
-
-    const ctx4 = document.getElementById('myChartBar');
-
-    const dataBar = {
-        labels: [
-            '1 AM',
-            '2 AM',
-            '3 AM',
-            '4 AM',
-            '5 AM',
-            '6 AM',
-            '7 AM',
+  const data = {
+    datasets: [
+      {
+        label: "Temperatura",
+        data: [
+          {
+            x: 1,
+            y: 22,
+          },
+          {
+            x: 2,
+            y: 24,
+          },
+          {
+            x: 3,
+            y: 27,
+          },
+          {
+            x: 4,
+            y: 23,
+          },
+          {
+            x: 5,
+            y: 20,
+          },
+          {
+            x: 6,
+            y: 18,
+          },
         ],
-        datasets: [{
-            label: 'Temperatura',
-            data: [22, 24, 27, 23, 20, 18, 22],
-            backgroundColor: [
-                'rgba(408, 12, 12, 0.2)',
-                'rgba(201, 203, 207, 0.2)'
-            ],
-            borderColor: [
-                'rgba(500, 33, 33, 1.2)',
+        borderColor: "#c33",
+        backgroundColor: "#c33",
+        borderWidth: 5,
+      },
+    ],
+  };
 
-                'rgb(201, 203, 207)'
-            ],
-            borderWidth: 1
-        }]
-    };
+  new Chart(ctx2, {
+    type: "scatter",
+    data: data,
+    options: {
+      scales: {
+        x: {
+          type: "linear",
+          position: "bottom",
+        },
+      },
+    },
+  });
 
-    new Chart(ctx4, {
-        type: 'bar',
-        data: dataBar,
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+  const dataPie = {
+    // labels: [
+    //     'Red',
+    //     'Blue',
+    //     'Yellow'
+    // ],
+    datasets: [
+      {
+        label: "My First Dataset",
+        data: [300, 50, 100],
+        backgroundColor: [
+          "rgb(255, 99, 132)",
+          "rgb(54, 162, 235)",
+          "rgb(255, 205, 86)",
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
 
+  const ctx3 = document.getElementById("myChartPie");
+  new Chart(ctx3, {
+    type: "doughnut",
+    data: dataPie,
+    options: {
+      responsive: true,
+    },
+  });
 
-    new Chart(ctx4, config);
+  const ctx4 = document.getElementById("myChartBar");
+
+  const dataBar = {
+    labels: ["1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM", "7 AM"],
+    datasets: [
+      {
+        label: "Temperatura",
+        data: [22, 24, 27, 23, 20, 18, 22],
+        backgroundColor: ["rgba(408, 12, 12, 0.2)", "rgba(201, 203, 207, 0.2)"],
+        borderColor: ["rgba(500, 33, 33, 1.2)", "rgb(201, 203, 207)"],
+        borderWidth: 1,
+      },
+    ],
+  };
+
+  new Chart(ctx4, {
+    type: "bar",
+    data: dataBar,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+
+  new Chart(ctx4, config);
 </script>

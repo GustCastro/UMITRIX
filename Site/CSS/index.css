@@ -58,8 +58,8 @@ html {
 }
 
 .container_navBar img {
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
   display: flex;
   margin: 20px;
 }
@@ -201,7 +201,7 @@ html {
 .container_dashboard {
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
   z-index: 5;
 }
 
@@ -301,7 +301,7 @@ html {
   position: absolute;
   z-index: 1;
   left: 565px;
-  margin-bottom: 90px;;
+  margin-bottom: 90px;
 }
 
 /* calculadora */
@@ -548,8 +548,9 @@ footer {
 }
 
 footer .logo {
-  height: 80px;
-  width: 80px;
+  height: 70px;
+  width: 70px;
+  margin-top: 20px;
 }
 
 /* isso tá um pouco de gambiarra, mas funcionou  */
