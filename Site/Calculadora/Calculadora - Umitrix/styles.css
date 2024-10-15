@@ -1,0 +1,19 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.style1 {
+    background-color: lightblue;
+    color: black;
+    padding: 20px;
+    transition: all 0.5s ease;
+    display: none;
+}
+
+.style2 {
+    background-color: lightcoral;
+    color: white;
+    padding: 20px;
+    transition: all 0.5s ease;
+}

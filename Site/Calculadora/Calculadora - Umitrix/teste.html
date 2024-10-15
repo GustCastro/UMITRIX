@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Estilo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="content" class="style1">
+        <input id="teste" type="text">Este é o conteúdo!</div>
+    <button id="avancar">Avançar</button>
+
+    
+</body>
+</html>
+<script>
+    // script.js
+document.getElementById('avancar').addEventListener('click', function() {
+    const content = document.getElementById('content');
+    const test = teste.value
+    // Alterna entre as classes
+    if (content.classList.contains('style1')) {
+        content.classList.remove('style1');
+        content.classList.add('style2');
+        alert(`${test} DEU CERTO`)
+    } else {
+        content.classList.remove('style2');
+        content.classList.add('style1');
+    }
+});
+
+
+</script>
