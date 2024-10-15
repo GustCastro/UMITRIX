@@ -192,6 +192,7 @@ html {
   color: #fff;
   height: 100vh;
   padding: 50px 0 50px 100px;
+  position: relative;
 }
 
 .dashboard h1 {
@@ -201,7 +202,7 @@ html {
 .container_dashboard {
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
   z-index: 5;
 }
 
@@ -242,7 +243,7 @@ html {
   z-index: 0;
   height: 330px;
   width: 352px;
-  rotate: 45deg;
+  /* rotate: 45deg; */
   left: 800px;
 }
 
@@ -301,7 +302,7 @@ html {
   position: absolute;
   z-index: 1;
   left: 565px;
-  margin-bottom: 90px;;
+  margin-bottom: 90px;
 }
 
 /* calculadora */
