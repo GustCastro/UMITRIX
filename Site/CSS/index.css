@@ -195,6 +195,7 @@ html {
   color: #fff;
   height: 100vh;
   padding: 50px 0 50px 100px;
+  position: relative;
 }
 
 .dashboard .titulo {
@@ -274,7 +275,7 @@ html {
   z-index: 0;
   height: 330px;
   width: 352px;
-  rotate: 45deg;
+  /* rotate: 45deg; */
   left: 800px;
 }
 

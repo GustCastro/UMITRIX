@@ -32,10 +32,161 @@
     </aside>
 
     <div class="container">
+<<<<<<< HEAD
+        <div class="wrapper-left">
+            <div class="bem-vindo">
+                <h1>Olá, Loja XPTO!</h1>
+            </div>
+
+            <div class="any-title">
+                <h1>Computadores em estoque</h1>
+            </div>
+
+            <div class="grafico-principal">
+                <span class="next-sect">></span>
+                <div class="wrapper-boxes">
+                    <section class="section-for-grid-box">
+                        <div class="grid-box">
+                            <div class="box1">
+                                <span class="number-sensor">DHT11 #1</span>
+                                <div class="temp bg-blue-theme df-complete">
+                                    <div class="temp-text df-complete">
+                                        <span style="font-size: 1.3em;">Temperatura</span>
+                                        <span style="font-size: 2em;">28°C</span>
+                                    </div>
+                                    <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
+                                        alt="temperature--v1" />
+                                </div>
+
+                                <div class="humidity bg-blue-theme df-complete">
+                                    <div class="humidity-text df-complete">
+                                        <span style="font-size: 1.3em;">Umidade</span>
+                                        <span style="font-size: 2em;">67%</span>
+                                    </div>
+                                    <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png"
+                                        alt="humidity" />
+                                </div>
+                            </div>
+                            <div class="box2">
+                                <span class="number-sensor">DHT11 #2</span>
+                                <div class="temp bg-blue-theme df-complete">
+                                    <div class="temp-text df-complete">
+                                        <span style="font-size: 1.3em;">Temperatura</span>
+                                        <span style="font-size: 2em;">28°C</span>
+                                    </div>
+                                    <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
+                                        alt="temperature--v1" />
+                                </div>
+
+                                <div class="humidity bg-blue-theme df-complete">
+                                    <div class="humidity-text df-complete">
+                                        <span style="font-size: 1.3em;">Umidade</span>
+                                        <span style="font-size: 2em;">67%</span>
+                                    </div>
+                                    <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png"
+                                        alt="humidity" />
+                                </div>
+                            </div>
+                            <div class="box3">
+                                <span class="number-sensor">DHT11 #3</span>
+                                <div class="temp bg-blue-theme df-complete">
+                                    <div class="temp-text df-complete">
+                                        <span style="font-size: 1.3em;">Temperatura</span>
+                                        <span style="font-size: 2em;">28°C</span>
+                                    </div>
+                                    <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
+                                        alt="temperature--v1" />
+                                </div>
+
+                                <div class="humidity bg-blue-theme df-complete">
+                                    <div class="humidity-text df-complete">
+                                        <span style="font-size: 1.3em;">Umidade</span>
+                                        <span style="font-size: 2em;">67%</span>
+                                    </div>
+                                    <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png"
+                                        alt="humidity" />
+                                </div>
+                            </div>
+                            <div class="box4">
+                                <span class="number-sensor">DHT11 #4</span>
+                                <div class="temp bg-blue-theme df-complete">
+                                    <div class="temp-text df-complete">
+                                        <span style="font-size: 1.3em;">Temperatura</span>
+                                        <span style="font-size: 2em;">28°C</span>
+                                    </div>
+                                    <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
+                                        alt="temperature--v1" />
+                                </div>
+
+                                <div class="humidity bg-blue-theme df-complete">
+                                    <div class="humidity-text df-complete">
+                                        <span style="font-size: 1.3em;">Umidade</span>
+                                        <span style="font-size: 2em;">67%</span>
+                                    </div>
+                                    <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png"
+                                        alt="humidity" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="container-graph">
+                        <button onclick="openDHT11_1()">DHT11 #1</button>
+                        <button onclick="openDHT11_2()">DHT11 #2</button>
+                        <button onclick="openDHT11_3()">DHT11 #3</button>
+                        <button onclick="openDHT11_4()">DHT11 #4</button>
+                        <div class="screen-graph" id="screenGraph">
+                            <section class="chart-container">
+                                <canvas id="myChart" style="position: relative;"></canvas>
+                            </section>
+                            <section class="chart-container">
+                                <canvas id="myChartOutro" style="position: relative;"></canvas>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- <div class="container-graficos-outros">
+                <div class="left">
+                    <section class="chart-container chart-container-doughnut">
+                        <p>Downtime Causes</p>
+                        <div class="donut-wrapper">
+                            <canvas id="myChartPie"></canvas>
+                            <div class="legenda-doughnut">
+                                <div class="legenda-item">
+                                    <div class="circle">
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Software</span>
+                                    </div>
+                                    <div class="circle">
+
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Hardware</span>
+                                    </div>
+                                    <div class="circle">
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Infraestrutura</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="chart-container chart-container-dispersao">
+                        <canvas id="myChartScatter" style="position: relative; height:20vh; width:100%"></canvas>
+                    </section>
+                </div>
+                <section class="chart-container chart-container-bar">
+                    <canvas id="myChartBar" style="position: relative; height:20vh; width:100%"></canvas>
+                </section>
+            </div> -->
+=======
       <div class="wrapper-left">
         <div class="bem-vindo">
           <h1>Olá, Loja XPTO!</h1>
           <input type="search" name="" id="" placeholder="Search" />
+>>>>>>> 0ab9163ab93988684c87c74694df28e00d1d26a6
         </div>
 
         <div class="any-title">
@@ -124,6 +275,118 @@
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
+<<<<<<< HEAD
+    let chart1 = null;
+    let chart2 = null;
+
+    //função para criar o primeiro gráfico
+    function createChart1() {
+        const ctx = document.getElementById('myChart');
+
+        if (chart1) {
+            chart1.destroy();
+        }
+
+        chart1 = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [
+                    '1 AM',
+                    '2 AM',
+                    '3 AM',
+                    '4 AM',
+                    '5 AM',
+                    '6 AM',
+                ],
+                datasets: [
+                    {
+                        label: 'Temperatura',
+                        data: [12, 24, 27, 12, 20, 18],
+                        backgroundColor: '#000',
+                        borderColor: '#000',
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    //função para criar o segundo gráfico
+    function createChart2() {
+        const ctxOutro = document.getElementById('myChartOutro');
+
+        if (chart2) {
+            chart2.destroy();
+        }
+
+        chart2 = new Chart(ctxOutro, {
+            type: 'line',
+            data: {
+                labels: [
+                    '1 AM',
+                    '2 AM',
+                    '3 AM',
+                    '4 AM',
+                    '5 AM',
+                    '6 AM',
+                ],
+                datasets: [
+                    {
+                        label: 'Umidade',
+                        data: [62, 54, 67, 73, 60, 68],
+                        backgroundColor: '#000',
+                        borderColor: '#000',
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+
+    // cria os gráficos automaticamente quando carreagr a pagina 
+    createChart1();
+    createChart2();
+
+    // quando clicar no botao 1 recria o gráfico de temp e umidade
+
+    function openDHT11_1() {
+        createChart1();
+        createChart2();
+    }
+
+    function openDHT11_2() {
+        createChart1();
+        createChart2();
+    }
+
+    function openDHT11_3() {
+        createChart1();
+        createChart2();
+    }
+
+    function openDHT11_4() {
+        createChart1();
+        createChart2();
+    }
+
+</script>
+=======
   const ctx = document.getElementById("myChart");
 
   new Chart(ctx, {
@@ -260,3 +523,4 @@
 
   new Chart(ctx4, config);
 </script>
+>>>>>>> 0ab9163ab93988684c87c74694df28e00d1d26a6
