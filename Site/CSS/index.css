@@ -230,6 +230,12 @@ html {
   z-index: 5;
 }
 
+.dashboard .imagem{
+  position: absolute;
+  right: 0%;
+  top: 112.8%;
+}
+
 .dashboard_image {
   padding: 30px;
   background-color: #fff;
@@ -253,12 +259,13 @@ html {
 }
 
 .text_dashboard button {
-  padding: 20px 30px;
+  padding: 15px 25px;
   background-color: #fff;
   border-radius: 5px;
   text-decoration: none;
   color: #000;
   margin-top: 30px;
+  font-size: 15px;
   z-index: 5;
 }
 
