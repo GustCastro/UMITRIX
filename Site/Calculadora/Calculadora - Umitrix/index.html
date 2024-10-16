@@ -7,35 +7,42 @@
     <link rel="shortcut icon" href="Imgs/logo Umitrix - Texto Branco.png" type="image/x-icon">
     <title>Calculadora Financeira - Umitrix</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="content">
-        <h1>Calcule o prejuizo estimado do seu Estoque</h1>
+    <div class="container">
+        <h1>BEM VINDO(A) SUA SIMULAÇÃO</h1>
+        <H1>RESULTADO DA SUA SIMULAÇÃO</H1>
+        <h2>COM BASE NAS INFORMAÇÕES DADAS</H2>
+        <h2>PARA CALCULAR O PREJUÍZO ESTIMADO DO SEU ESTOQUE</h2>
+        <H1>REGIÃO</H1>
 
-        <p> Informe o valor da aquisição dos aparelhos </p>
-        <input type="number" id="custo_da_aquisicao" placeholder="ex:R$10000" class="input-style"><br>
+        <label for="custo_da_aquisicao">Informe o valor da aquisição dos aparelhos: </label>
+        <input type="number" min="0" id="custo_da_aquisicao" placeholder="ex:R$10000" class="input-style"><br>
 
-        <p> Informe a quantidade de produtos adquiridos </p>
-        <input type="number" id="quantidade" placeholder="ex:1500" class="input-style"><br>
+        <label for="quantidade">Informe a quantidade de produtos adquiridos: </label>
+        <input type="number" min="0" id="quantidade" placeholder="ex:1500" class="input-style"><br>
 
-        <p> Informe a região ou estado do seu estoque</p>
-        <input type="text" id="regiao_do_estoque" placeholder="ex:São Paulo" class="input-style"><br>
-        <select name="Regiões" id="Regioes_Brasil">
+        <label for-="Regioes_Brasil">Selecione a região ou estado do seu estoque: </label>
+        
+        <select name="Regiões" id="Regioes_Brasil" class="Select-style">
             <option value="" disabled selected>Selecione a região</option>
             <option value="Norte">Norte</option>
             <option value="Nordeste">Nordeste</option>
             <option value="Sudeste">Sudeste</option>
             <option value="CentroOeste">Centro-Oeste</option>
             <option value="Sul">Sul</option>
-        </select>
+        </select><br><br>
+        <button class="btn-style" onclick="Voltar()">Voltar</button>
+        <button class="btn-style" onclick="Avançar()">Avançar</button>
+        <a><button class="btn-style" onclick="Home()">Home</button></a>
+        
 
-        <button onclick="CalcularPrejuizo()">Prejuizo Total</button>
+        <button class="btn-style" onclick="CalcularPrejuizo()">Prejuizo Total</button>
     </div>
-    <br>
-
-
-    <div id="exibir"></div>
 </body>
 
 </html>
