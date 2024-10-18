@@ -8,54 +8,82 @@
     <title>Calculadora Financeira - Umitrix</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
 </head>
 
 <body>
+    <div class="logo"><img src="Imgs/logo Umitrix - Texto Branco.png" alt="Logo" width="100" height="100"></div>
+
     <div class="container">
 
-        <div class="logo"><img src="Imgs/logo Umitrix - Texto Branco.png" alt="Logo" width="300" height="300"></div>
-        
-        <h1>BEM VINDO(A) SUA SIMULAÇÃO</h1>
-        <H1>RESULTADO DA SUA SIMULAÇÃO</H1>
-        <div class="Avisos">
-            <h2>COM BASE NAS INFORMAÇÕES DADAS</H2>
-            <h2>PARA CALCULAR O PREJUÍZO ESTIMADO DO SEU ESTOQUE</h2>
-        </div>
-        <div class="Região">
-            <H2>REGIÃO</H2>
+        <div class="bem-vindo">
+            <div class="Avisos">
+                <h1>BEM VINDO(A) SUA SIMULAÇÃO</h1>
+            </div>
+            <div class="Perguntas">
+                <div class="Avisos">
+                    <h2>PARA CALCULAR O PREJUÍZO ESTIMADO DO SEU ESTOQUE</h2>
+                </div>
+                <div class="ContainerPegunta">
+                    <div class="pergunta1" style="margin-right: 15px;">
+                        <label for="custo_da_aquisicao">Informe o valor da aquisição dos aparelhos: </label>
+                        <input type="number" min="0" id="custo_da_aquisicao" placeholder="ex:R$10000"
+                            class="input-style">
+                    </div>
+                    <div class="pergunta1" style="margin-left: 15px">
+                        <label for="quantidade">Informe a quantidade de produtos adquiridos: </label>
+                        <input type="number" min="0" id="quantidade" placeholder="ex:1500" class="input-style">
+                    </div>
+                </div>
+                <div class="BotãoFdp"><button class="btn-style" onclick="Avançar()">Avançar</button></div>
+            </div>
         </div>
 
-        <div class="Perguntas">
-            <label for="custo_da_aquisicao">Informe o valor da aquisição dos aparelhos: </label>
-            <input type="number" min="0" id="custo_da_aquisicao" placeholder="ex:R$10000" class="input-style"><br><br>
-            <label for="quantidade">Informe a quantidade de produtos adquiridos: </label>
-            <input type="number" min="0" id="quantidade" placeholder="ex:1500" class="input-style"><br><br>
-            <label for-="Regioes_Brasil">Selecione a região ou estado do seu estoque: </label>
-        </div>
-  
-        
-        <div>
-           
-            <select name="Regiões" id="Regioes_Brasil" class="Select-style">
-                <option value="" disabled selected>Selecione a região</option>
-                <option value="Norte">Norte</option>
-                <option value="Nordeste">Nordeste</option>
-                <option value="Sudeste">Sudeste</option>
-                <option value="CentroOeste">Centro-Oeste</option>
-                <option value="Sul">Sul</option>
-            </select>
-        </div>
-        <br><br>
-        <button class="btn-style" onclick="Voltar()">Voltar</button>
-        <button class="btn-style" onclick="Avançar()">Avançar</button>
-        <a><button class="btn-style" onclick="Home()">Home</button></a><br><br>
-        
 
-        <button class="btn-style" onclick="CalcularPrejuizo()">Prejuizo Total</button>
+        <div class="RegiãoNeutra">
+            <div class="Região">
+                <H2>REGIÃO</H2>
+            </div>
+            <div class="Avisos">
+                <h2>PARA CALCULAR O PREJUÍZO ESTIMADO DO SEU ESTOQUE</h2>
+                <div class="Perguntas">
+                    <label for-="Regioes_Brasil">Selecione a região ou estado do seu estoque: </label>
+                    <select name="Regiões" id="Regioes_Brasil" class="Select-style">
+                        <option value="" disabled selected>Selecione a região</option>
+                        <option value="Norte">Norte</option>
+                        <option value="Nordeste">Nordeste</option>
+                        <option value="Sudeste">Sudeste</option>
+                        <option value="CentroOeste">Centro-Oeste</option>
+                        <option value="Sul">Sul</option>
+                    </select>
+                    <button class="btn-style" onclick="Voltar()">Voltar</button>
+                    <button class="btn-style" onclick="Avançar()">Avançar</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="Resultado">
+            <div class="Avisos">
+                <H1>RESULTADO DA SUA SIMULAÇÃO</H1>
+                <h2>COM BASE NAS INFORMAÇÕES DADAS</H2>
+                <div id="div_resultado"></div>
+                <a><button class="btn-style" onclick="Home()">Home</button></a>
+            </div>
+        </div>
+
+
+
+
     </div>
+
+
+
+
 </body>
 
 </html>
