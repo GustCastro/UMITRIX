@@ -54,6 +54,7 @@ i {
 
 .wrapper-left {
   width: 100%;
+  margin: 0 20px;
 }
 
 .bem-vindo {
@@ -85,7 +86,6 @@ i {
 
 .wrapper-boxes {
   width: 100%;
-  margin-right: 30px;
 }
 
 .section-for-grid-box {
@@ -97,12 +97,13 @@ i {
 .grid-box {
   display: flex;
   width: 100%;
-  position: relative; /* Importante para garantir que o span seja posicionado relativamente à grid-box */
+  position: relative;
 }
 
 .next-sect {
   color: #000;
   position: absolute;
+  border: none;
   font-size: 1.5em;
   border-radius: 8px;
   cursor: pointer;

@@ -40,86 +40,10 @@
       </div>
 
       <div class="grafico-principal">
-        <span class="next-sect">></span>
+        <button class="next-sect" onclick="sensoresCard()">></button>
         <div class="wrapper-boxes">
           <section class="section-for-grid-box">
-            <div class="grid-box">
-              <div class="box1">
-                <span class="number-sensor">DHT11 #1</span>
-                <div class="temp bg-blue-theme df-complete">
-                  <div class="temp-text df-complete">
-                    <span style="font-size: 1.3em;">Temperatura</span>
-                    <span style="font-size: 2em;">28°C</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
-                    alt="temperature--v1" />
-                </div>
-
-                <div class="humidity bg-blue-theme df-complete">
-                  <div class="humidity-text df-complete">
-                    <span style="font-size: 1.3em;">Umidade</span>
-                    <span style="font-size: 2em;">67%</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png" alt="humidity" />
-                </div>
-              </div>
-              <div class="box2">
-                <span class="number-sensor">DHT11 #2</span>
-                <div class="temp bg-blue-theme df-complete">
-                  <div class="temp-text df-complete">
-                    <span style="font-size: 1.3em;">Temperatura</span>
-                    <span style="font-size: 2em;">28°C</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
-                    alt="temperature--v1" />
-                </div>
-
-                <div class="humidity bg-blue-theme df-complete">
-                  <div class="humidity-text df-complete">
-                    <span style="font-size: 1.3em;">Umidade</span>
-                    <span style="font-size: 2em;">67%</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png" alt="humidity" />
-                </div>
-              </div>
-              <div class="box3">
-                <span class="number-sensor">DHT11 #3</span>
-                <div class="temp bg-blue-theme df-complete">
-                  <div class="temp-text df-complete">
-                    <span style="font-size: 1.3em;">Temperatura</span>
-                    <span style="font-size: 2em;">28°C</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
-                    alt="temperature--v1" />
-                </div>
-
-                <div class="humidity bg-blue-theme df-complete">
-                  <div class="humidity-text df-complete">
-                    <span style="font-size: 1.3em;">Umidade</span>
-                    <span style="font-size: 2em;">67%</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png" alt="humidity" />
-                </div>
-              </div>
-              <div class="box4">
-                <span class="number-sensor">DHT11 #4</span>
-                <div class="temp bg-blue-theme df-complete">
-                  <div class="temp-text df-complete">
-                    <span style="font-size: 1.3em;">Temperatura</span>
-                    <span style="font-size: 2em;">28°C</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
-                    alt="temperature--v1" />
-                </div>
-
-                <div class="humidity bg-blue-theme df-complete">
-                  <div class="humidity-text df-complete">
-                    <span style="font-size: 1.3em;">Umidade</span>
-                    <span style="font-size: 2em;">67%</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png" alt="humidity" />
-                </div>
-              </div>
+            <div class="grid-box" id="gridBoxId">
             </div>
           </section>
 
@@ -200,8 +124,8 @@
                 </section>
             </div> -->
     </div>
-  </div>
 </body>
+</div>
 
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -315,4 +239,37 @@
     createChart2();
   }
 
+  var sensor = 0;
+  function sensoresCard() {
+    gridBoxId.innerHTML = '';
+
+    for (var i = 1; i <= 4; i++) {
+      sensor += 1
+      console.log(sensor)
+      gridBoxId.innerHTML += `
+  <div class="box1">
+                <span class="number-sensor">DHT11 #${sensor}</span>
+                <div class="temp bg-blue-theme df-complete">
+                  <div class="temp-text df-complete">
+                    <span style="font-size: 1.3em;">Temperatura</span>
+                    <span style="font-size: 2em;">28°C</span>
+                  </div>
+                  <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
+                    alt="temperature--v1" />
+                </div>
+
+                <div class="humidity bg-blue-theme df-complete">
+                  <div class="humidity-text df-complete">
+                    <span style="font-size: 1.3em;">Umidade</span>
+                    <span style="font-size: 2em;">67%</span>
+                  </div>
+                  <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png" alt="humidity" />
+                </div>
+              </div>
+      `
+    }
+
+  }
+
+  sensoresCard();
 </script>
