@@ -135,6 +135,14 @@ header {
     justify-content: space-between;
     color: #f4fafb;
     text-align: left;
+    width: 400px; 
+    background-color: #0d1b4c;
+    padding: 30px;
+    border-radius: 15px;
+    color: #f4fafb;
+    margin: 0 auto;
+    position: relative;
+    height: 60%;
 }
 
 
