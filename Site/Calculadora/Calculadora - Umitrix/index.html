@@ -39,29 +39,39 @@
                         <input type="number" min="0" id="quantidade" placeholder="ex:1500" class="input-style">
                     </div>
                 </div>
-                <div class="BotãoFdp"><button class="btn-style" onclick="Avançar()">Avançar</button></div>
+                <div class="Botão"><button class="btn-style" onclick="Avançar()">Avançar</button></div>
             </div>
         </div>
 
 
         <div class="RegiãoNeutra">
-            <div class="Região">
+            <div class="RegiãoSelect">
                 <H2>REGIÃO</H2>
+                <div>
+                    <img src="Imgs/Brasil.png" alt="Brasil" width="300" height="300">
+                </div>
             </div>
-            <div class="Avisos">
-                <h2>PARA CALCULAR O PREJUÍZO ESTIMADO DO SEU ESTOQUE</h2>
-                <div class="Perguntas">
-                    <label for-="Regioes_Brasil">Selecione a região ou estado do seu estoque: </label>
-                    <select name="Regiões" id="Regioes_Brasil" class="Select-style">
-                        <option value="" disabled selected>Selecione a região</option>
-                        <option value="Norte">Norte</option>
-                        <option value="Nordeste">Nordeste</option>
-                        <option value="Sudeste">Sudeste</option>
-                        <option value="CentroOeste">Centro-Oeste</option>
-                        <option value="Sul">Sul</option>
-                    </select>
-                    <button class="btn-style" onclick="Voltar()">Voltar</button>
-                    <button class="btn-style" onclick="Avançar()">Avançar</button>
+            <div class="AvisosSelect">
+                <div class="TituloSelect">
+                    <h2>PARA CALCULAR O PREJUÍZO ESTIMADO DO SEU ESTOQUE</h2>
+                </div>
+                <div class="perguntaSelect">
+                    <div><label for="Regioes_Brasil">Selecione a região do seu estoque: </label>
+                    </div>
+                    <div class="ajustandoSelect">
+                        <select name="Regiões" id="Regioes_Brasil" class="Select-style">
+                            <option value="" disabled selected>Selecione a região</option>
+                            <option value="Norte">Norte</option>
+                            <option value="Nordeste">Nordeste</option>
+                            <option value="Sudeste">Sudeste</option>
+                            <option value="CentroOeste">Centro-Oeste</option>
+                            <option value="Sul">Sul</option>
+                        </select>
+                    </div>
+                    <div class="BotãoSelect">
+                        <button class="btn-styleSelect2" onclick="Voltar()">Voltar</button>
+                        <button class="btn-styleSelect" onclick="Avançar()">Avançar</button>
+                    </div>
                 </div>
             </div>
         </div>

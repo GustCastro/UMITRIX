@@ -15,6 +15,8 @@ body {
         -webkit-appearance: none;
     
 }   
+}
+/*   askndasdnas         */
 .logo{
     position: absolute;
     top: 50px; 
@@ -56,7 +58,7 @@ h2{
     justify-content: space-between;
     flex-direction: column;
 }
-.BotãoFdp{
+.Botão{
     display: flex;
     justify-content: flex-end;
     margin-top: 45px;
@@ -143,9 +145,128 @@ footer{
     height: 10px;
     background-color: #30343F;
 }
-.RegiãoNeutra{
-    display: none;
-}
 .Resultado{
     display: none;
+}
+.select{
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
+
+
+/* SELECTS BRASILSILSILSIL */
+
+.RegiãoNeutra{
+    display: flex;
+    justify-content: space-between;
+    margin: 10%;
+    gap: 15px;
+    display: none;
+}
+.RegiãoSelect{
+    background-color: #273469;
+    font-size: 50px;
+    color: #e4d9ff;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2) ;
+
+}
+.AvisosSelect{
+    background-color:#273469;
+    text-align: center;
+    font-size: 23px;
+    color:#fafaff;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2) ;
+}
+.TituloSelect{
+    font-size: 25px;
+}
+.perguntaSelect{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 70px;
+    font-weight: bold; 
+    text-align: center;
+
+}
+.ajustandoSelect{
+    margin-top: 0px;
+}
+.Select-style{
+    appearance: none; 
+    -webkit-appearance: none; 
+    -moz-appearance: none; 
+    background: url('Imgs/seta-para-baixo.png') no-repeat right 22px center;
+    background-size: 12px;
+    padding-right: 30px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 47%;
+    height: 65px;
+    padding: 0;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); 
+    border: none; 
+    border-radius: 10px;
+    background-color: #fafaff;
+    color: #a3a3a3; 
+    outline: none; 
+    font-family: "Poppins"; 
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 8px;
+}
+.BotãoSelect{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+.btn-styleSelect2{
+    width: 15%;
+    padding: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); 
+    border: none; 
+    border-radius: 10px;
+    background-color: #e4d9ff;
+    color: #273469; 
+    outline: none; 
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: "Poppins"; 
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.btn-styleSelect{
+    width: 20%;
+    padding: 10px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); 
+    border: none; 
+    border-radius: 10px;
+    background-color: #30343f;
+    color: #ffffff; 
+    outline: none; 
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    font-family: "Poppins"; 
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
 }
