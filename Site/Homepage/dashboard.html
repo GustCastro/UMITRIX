@@ -1,262 +1,275 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard Umitrix</title>
-    <link rel="stylesheet" href="../CSS/dashboard.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-  </head>
 
-  <body>
-    <aside>
-      <div class="menu">
-        <ul>
-          <li class="main-icon-home">
-            <a href="#"><i class="fa fa-home"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-tachometer"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-wrench"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa fa-users"></i></a>
-          </li>
-        </ul>
-      </div>
-    </aside>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Umitrix</title>
+  <link rel="stylesheet" href="../CSS/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
 
-    <div class="container">
-      <div class="wrapper-left">
-        <div class="bem-vindo">
-          <h1>Olá, Loja XPTO!</h1>
-          <input type="search" name="" id="" placeholder="Search" />
-        </div>
-
-        <div class="any-title">
-          <h1>Computadores em estoque</h1>
-        </div>
-
-        <div class="grafico-principal">
-          <div class="wrapper-boxes">
-            <section class="grid-section-box">
-              <div class="grid-box">
-                <div class="box1">
-                  <span class="wh-text">Quantidade de sensores</span>
-                  <h1 class="wh-text mt-10">XX</h1>
-                </div>
-                <div class="box2">
-                  <span class="wh-text">Lorem ipsum dolor sit amet.</span>
-                  <h1 class="wh-text mt-10">XX</h1>
-                </div>
-                <div class="box3">
-                  <span class="wh-text">Lorem ipsum dolor sit.</span>
-                  <h1 class="wh-text mt-10">XX</h1>
-                </div>
-              </div>
-            </section>
-
-            <section class="chart-container">
-              <canvas
-                id="myChart"
-                style="position: relative; height: 45vh; width: 100%"
-              ></canvas>
-            </section>
-          </div>
-          <section class="total">
-            <div class="total-valor1">
-              <h3 class="m20-0">Total de computadores</h3>
-              <h1>R$ 1.500.000,00</h1>
-            </div>
-            <div class="total-valor2">
-              <h3 class="m20-0">Custo total do estoque</h3>
-              <h1>R$ 1.500.000,00</h1>
-            </div>
-          </section>
-        </div>
-        <div class="container-graficos-outros">
-          <div class="left">
-            <section class="chart-container chart-container-doughnut">
-              <p>Downtime Causes</p>
-              <div class="donut-wrapper">
-                <canvas id="myChartPie"></canvas>
-                <div class="legenda-doughnut">
-                  <div class="legenda-item">
-                    <div class="circle">
-                      <div class="legenda-item-circle"></div>
-                      <span>Software</span>
-                    </div>
-                    <div class="circle">
-                      <div class="legenda-item-circle"></div>
-                      <span>Hardware</span>
-                    </div>
-                    <div class="circle">
-                      <div class="legenda-item-circle"></div>
-                      <span>Infraestrutura</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section class="chart-container chart-container-dispersao">
-              <canvas
-                id="myChartScatter"
-                style="position: relative; height: 20vh; width: 100%"
-              ></canvas>
-            </section>
-          </div>
-          <section class="chart-container chart-container-bar">
-            <canvas
-              id="myChartBar"
-              style="position: relative; height: 20vh; width: 100%"
-            ></canvas>
-          </section>
-        </div>
-      </div>
+<body>
+  <aside>
+    <div class="menu">
+      <ul>
+        <li class="main-icon-home">
+          <a href="#"><i class="fa fa-home"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-tachometer"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-wrench"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-users"></i></a>
+        </li>
+      </ul>
     </div>
-  </body>
+  </aside>
+
+  <div class="container">
+    <div class="wrapper-left">
+      <div class="bem-vindo">
+        <h1>Olá, Loja XPTO!</h1>
+      </div>
+
+      <div class="any-title">
+        <h1>Computadores em estoque</h1>
+      </div>
+
+      <div class="grafico-principal">
+        <button class="next-sect" onclick="sensoresCard()">></button>
+        <div class="wrapper-boxes">
+          <section class="section-for-grid-box">
+            <div class="grid-box" id="gridBoxId">
+            </div>
+          </section>
+
+          <div class="container-graph">
+            <button onclick="openDHT11_1()">DHT11 #1</button>
+            <button onclick="openDHT11_2()">DHT11 #2</button>
+            <button onclick="openDHT11_3()">DHT11 #3</button>
+            <button onclick="openDHT11_4()">DHT11 #4</button>
+            <div class="container-graph-screen-history">
+              <div class="screen-graph" id="screenGraph">
+                <section class="chart-container">
+                  <canvas id="myChart" class="graph" style="position: relative;"></canvas>
+                </section>
+                <section class="chart-container">
+                  <canvas id="myChartOutro" class="graph" style="position: relative;"></canvas>
+                </section>
+              </div>
+              <div class="history">
+                <h2>Histórico de dados elevados</h2>
+                <table id="historicoTableId">
+                  <thead>
+                    <tr>
+                      <th>Data/Hora</th>
+                      <th>Sensor</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dadosHistoricos">
+                    <tr>
+                      <td>01/01/2021 10:00</td>
+                      <td>1</td>
+                    </tr>
+                    <tr>
+                      <td>01/01/2021 10:15</td>
+                      <td>1</td>
+                    </tr>
+                    <!-- Novos dados de temperatura e umidade podem ser inseridos aqui -->
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="container-graficos-outros">
+                <div class="left">
+                    <section class="chart-container chart-container-doughnut">
+                        <p>Downtime Causes</p>
+                        <div class="donut-wrapper">
+                            <canvas id="myChartPie"></canvas>
+                            <div class="legenda-doughnut">
+                                <div class="legenda-item">
+                                    <div class="circle">
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Software</span>
+                                    </div>
+                                    <div class="circle">
+
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Hardware</span>
+                                    </div>
+                                    <div class="circle">
+                                        <div class="legenda-item-circle"></div>
+                                        <span>Infraestrutura</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="chart-container chart-container-dispersao">
+                        <canvas id="myChartScatter" style="position: relative; height:20vh; width:100%"></canvas>
+                    </section>
+                </div>
+                <section class="chart-container chart-container-bar">
+                    <canvas id="myChartBar" style="position: relative; height:20vh; width:100%"></canvas>
+                </section>
+            </div> -->
+    </div>
+</body>
+</div>
+
 </html>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-  const ctx = document.getElementById("myChart");
+  let chart1 = null;
+  let chart2 = null;
 
-  new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: ["1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM"],
-      datasets: [
-        {
-          label: "Temperatura média",
-          data: [22, 24, 27, 23, 20, 18],
-          backgroundColor: "#fff",
-          borderColor: "#fff",
-          borderWidth: 3,
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
+  //função para criar o primeiro gráfico
+  function createChart1() {
+    const ctx = document.getElementById('myChart');
 
-  const ctx2 = document.getElementById("myChartScatter");
+    if (chart1) {
+      chart1.destroy();
+    }
 
-  const data = {
-    datasets: [
-      {
-        label: "Temperatura",
-        data: [
-          {
-            x: 1,
-            y: 22,
-          },
-          {
-            x: 2,
-            y: 24,
-          },
-          {
-            x: 3,
-            y: 27,
-          },
-          {
-            x: 4,
-            y: 23,
-          },
-          {
-            x: 5,
-            y: 20,
-          },
-          {
-            x: 6,
-            y: 18,
-          },
+    chart1 = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [
+          '1 AM',
+          '2 AM',
+          '3 AM',
+          '4 AM',
+          '5 AM',
+          '6 AM',
         ],
-        borderColor: "#c33",
-        backgroundColor: "#c33",
-        borderWidth: 5,
+        datasets: [
+          {
+            label: 'Temperatura',
+            data: [12, 24, 27, 12, 20, 18],
+            backgroundColor: '#000',
+            borderColor: '#000',
+            borderWidth: 3
+          }
+        ]
       },
-    ],
-  };
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
 
-  new Chart(ctx2, {
-    type: "scatter",
-    data: data,
-    options: {
-      scales: {
-        x: {
-          type: "linear",
-          position: "bottom",
-        },
-      },
-    },
-  });
+  //função para criar o segundo gráfico
+  function createChart2() {
+    const ctxOutro = document.getElementById('myChartOutro');
 
-  const dataPie = {
-    // labels: [
-    //     'Red',
-    //     'Blue',
-    //     'Yellow'
-    // ],
-    datasets: [
-      {
-        label: "My First Dataset",
-        data: [300, 50, 100],
-        backgroundColor: [
-          "rgb(255, 99, 132)",
-          "rgb(54, 162, 235)",
-          "rgb(255, 205, 86)",
+    if (chart2) {
+      chart2.destroy();
+    }
+
+    chart2 = new Chart(ctxOutro, {
+      type: 'line',
+      data: {
+        labels: [
+          '1 AM',
+          '2 AM',
+          '3 AM',
+          '4 AM',
+          '5 AM',
+          '6 AM',
         ],
-        hoverOffset: 4,
+        datasets: [
+          {
+            label: 'Umidade',
+            data: [62, 54, 67, 73, 60, 68],
+            backgroundColor: '#000',
+            borderColor: '#000',
+            borderWidth: 3
+          }
+        ]
       },
-    ],
-  };
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  }
 
-  const ctx3 = document.getElementById("myChartPie");
-  new Chart(ctx3, {
-    type: "doughnut",
-    data: dataPie,
-    options: {
-      responsive: true,
-    },
-  });
+  // cria os gráficos automaticamente quando carreagr a pagina 
+  createChart1();
+  createChart2();
 
-  const ctx4 = document.getElementById("myChartBar");
+  // quando clicar no botao 1 recria o gráfico de temp e umidade
 
-  const dataBar = {
-    labels: ["1 AM", "2 AM", "3 AM", "4 AM", "5 AM", "6 AM", "7 AM"],
-    datasets: [
-      {
-        label: "Temperatura",
-        data: [22, 24, 27, 23, 20, 18, 22],
-        backgroundColor: ["rgba(408, 12, 12, 0.2)", "rgba(201, 203, 207, 0.2)"],
-        borderColor: ["rgba(500, 33, 33, 1.2)", "rgb(201, 203, 207)"],
-        borderWidth: 1,
-      },
-    ],
-  };
+  function openDHT11_1() {
+    createChart1();
+    createChart2();
+  }
 
-  new Chart(ctx4, {
-    type: "bar",
-    data: dataBar,
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-      },
-    },
-  });
+  function openDHT11_2() {
+    createChart1();
+    createChart2();
+  }
 
-  new Chart(ctx4, config);
+  function openDHT11_3() {
+    createChart1();
+    createChart2();
+  }
+
+  function openDHT11_4() {
+    createChart1();
+    createChart2();
+  }
+
+  var sensor = 0;
+  function sensoresCard() {
+    gridBoxId.innerHTML = '';
+
+    for (var i = 1; i <= 4; i++) {
+      sensor += 1
+      console.log(sensor)
+      gridBoxId.innerHTML += `
+  <div class="box1">
+                <span class="number-sensor">DHT11 #${sensor}</span>
+                <div class="temp bg-blue-theme df-complete">
+                  <div class="temp-text df-complete">
+                    <span style="font-size: 1.3em;">Temperatura</span>
+                    <span style="font-size: 2em;">28°C</span>
+                  </div>
+                  <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
+                    alt="temperature--v1" />
+                </div>
+
+                <div class="humidity bg-blue-theme df-complete">
+                  <div class="humidity-text df-complete">
+                    <span style="font-size: 1.3em;">Umidade</span>
+                    <span style="font-size: 2em;">67%</span>
+                  </div>
+                  <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png" alt="humidity" />
+                </div>
+              </div>
+      `
+    }
+
+  }
+
+  sensoresCard();
 </script>

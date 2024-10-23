@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="cadastro.css" />
+    <link
+      rel="shortcut icon"
+      href="../../src/favicon_io/favicon.ico"
+      type="image/x-icon"
+    />
 
-    <title>Cadastro - Umitrix</title>
+    <title>| Cadastro - Umitrix</title>
   </head>
   <body>
     <header>
@@ -22,7 +27,7 @@
       <div class="formulario_cadastro">
         <h2>Cadastre sua empresa!</h2>
 
-        <form>
+        <!-- <form> -->
           <div class="inputs_coluna">
             <div class="input_maior">
               <label for="email">Email:</label>
@@ -38,7 +43,7 @@
                 <label for="razaoSocial">Razão social:</label>
                 <input
                   type="text"
-                  id="razaoSocial"
+                  id="RazaoSocial"
                   class="campos"
                   placeholder="Nome da empresa"
                   required
@@ -51,8 +56,6 @@
                   id="CNPJ"
                   class="campos"
                   placeholder="00.000.000/0001-00"
-                  max="18"
-                  min="18"
                   required
                 />
               </div>
@@ -75,7 +78,6 @@
                   id="Telefone"
                   class="campos"
                   placeholder="Tel"
-                  max="15"
                   required
                 />
               </div>
@@ -89,7 +91,19 @@
                   class="campos"
                   placeholder="Digite a senha"
                   required
+                  max="12"
+                  min="12"
                 />
+                <button
+                  type="button"
+                  onclick="gerarSenha()"
+                  class="btn_sugerir"
+                >
+                  Sugerir
+                </button>
+                <span id="senhaSugerida" class="senha_sugerida"
+                  >Senha sugerida:
+                </span>
               </div>
               <div class="div_menores">
                 <label for="RepetirSenha">Repetir senha:</label>
@@ -99,6 +113,8 @@
                   class="campos"
                   placeholder="Confirme a senha"
                   required
+                  max="12"
+                  min="12"
                 />
               </div>
             </div>
@@ -162,7 +178,7 @@
                 <label for="numero">Nª:</label>
                 <input
                   type="text"
-                  id="numero"
+                  id="Numero"
                   class="campos campo_numero"
                   placeholder="Num"
                   required
@@ -180,7 +196,7 @@
               </div>
             </div>
             <div class="div_btn">
-              <button type="submit" class="btn_cadastrar">Cadastrar</button>
+              <button type="submit" class="btn_cadastrar" onclick="cadastrar()">Cadastrar</button>
             </div>
             <div class="msg_login">
               <p>Já possui login?</p>
@@ -189,8 +205,10 @@
               </div>
             </div>
           </div>
-        </form>
+        <!-- </form> -->
       </div>
     </div>
-  </body>
+
+<script src="cadastro.js"></script>
+</body>
 </html>
