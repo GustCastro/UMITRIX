@@ -145,7 +145,7 @@ h2{
     justify-content: space-between;
     margin: 10%;
     gap: 15px;
-    display: none;
+    
 }
 .RegiãoSelect{
     background-color: #273469;
@@ -208,7 +208,7 @@ h2{
     border: none; 
     border-radius: 10px;
     background-color: #fafaff;
-    color: #a3a3a3; 
+    color: #30343f; 
     outline: none; 
     font-family: "Poppins"; 
     text-align: center;
