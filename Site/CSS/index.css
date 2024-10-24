@@ -38,7 +38,9 @@ html {
 
 #btn_cima:hover {
   /* Fazer uma animação */
-  background-color: red;
+  background-color: #1e2748;
+  padding: 20px 20px;
+  transition-duration: 0.3s;
 }
 
 .navBar {
@@ -233,8 +235,8 @@ html {
 
 .dashboard .imagem{
   position: absolute;
-  right: 0%;
-  top: 112.8%;
+  left: 35.8%;
+  bottom: 11.7%;
 }
 
 .dashboard_image {
