@@ -17,7 +17,7 @@
 
 <body>
     <div class="logo"><img src="Imgs/logo Umitrix - Texto Branco.png" alt="Logo" width="100" height="100"></div>
-
+    <div class="BotaoHome"><a><button class="btn-styleHome" onclick="Home()">Home</button></a></div>
     <div class="container">
 
         <div class="bem-vindo">
@@ -48,7 +48,15 @@
             <div class="RegiãoSelect">
                 <H2>REGIÃO</H2>
                 <div>
-                    <img src="Imgs/Brasil.png" alt="Brasil" width="300" height="300">
+                    <img src="Imgs/Brasil.png" alt="Brasil" width="300" height="300" style="">
+
+                    <img src="Imgs/Brasil - Centro-Oeste.png" alt="Centro-Oeste" style="display: none;" width="300" height="300">
+
+                    <img src="Imgs/Brasil - Nordeste.png" alt="Nordeste" style="display: none;" width="300" height="300">
+
+                    <img src="Imgs/Brasil - Sudeste.png" alt="Norte" style="display: none;" width="300" height="300">
+
+                    <img src="Imgs/Brasil - Sul.png" alt="Centro-Oeste" style="display: none;" width="300" height="300">
                 </div>
             </div>
             <div class="AvisosSelect">
@@ -78,11 +86,21 @@
 
 
         <div class="Resultado">
-            <div class="Avisos">
-                <H1>RESULTADO DA SUA SIMULAÇÃO</H1>
-                <h2>COM BASE NAS INFORMAÇÕES DADAS</H2>
-                <div id="div_resultado"></div>
-                <a><button class="btn-style" onclick="Home()">Home</button></a>
+            <div class="containerResultado">
+                <div class="TituloResultado">
+                    <H1>RESULTADO DA SUA SIMULAÇÃO</H1>
+                </div>
+                <div class="ResultadoSimulacao">
+                    <h2 class="TituloResultadoSimulcao">COM BASE NAS INFORMAÇÕES DADAS</H2>
+                    <div id="div_resultado">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+                        printer took a galley of type and scrambled it to make a type specimen book. It has survived not
+                        only five centuries, but also the leap into electronic typesetting, remaining essentially
+                        unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+                        Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
+                        including versions of Lorem Ipsum.</div>
+                </div>
+
             </div>
         </div>
 
