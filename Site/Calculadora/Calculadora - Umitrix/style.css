@@ -257,7 +257,7 @@ h2{
 .Resultado{
     height: 70%;
     width: 100%;
-    margin-top: 13px;
+    margin-top: 3%;
     display: none;
 }
 .containerResultado{
@@ -269,7 +269,8 @@ h2{
     
 }
 .ResultadoSimulacao{
-    height: 520px;
+    height: auto;
+    max-height: 100%;
     width: 60%;
     padding: 20px;
     border-radius: 10px;

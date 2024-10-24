@@ -20,7 +20,7 @@
     <div class="BotaoHome"><a><button class="btn-styleHome" onclick="Home()">Home</button></a></div>
     <div class="container">
 
-        <div id="BemVindo" class="bem-vindo" style="display: '';">
+        <div id="BemVindo" class="bem-vindo" >
             <div class="TituloBemVindo">
                 <h1>BEM VINDO(A) SUA SIMULAÇÃO</h1>
             </div>
@@ -45,7 +45,7 @@
 
 
 
-        <div id="AvisosSelect" class="RegiãoNeutra" style="display: none;">
+        <div id="AvisosSelect" class="RegiãoNeutra" style="display: none;" >
             <div class="RegiãoSelect">
                 <H2>REGIÃO</H2>
                 <div>
@@ -90,7 +90,7 @@
 
 
 
-        <div id="select" class="Resultado" style="display: none;">
+        <div id="divResultado" class="Resultado" style="display: none;">
             <div class="containerResultado">
                 <div class="TituloResultado">
                     <H1>RESULTADO DA SUA SIMULAÇÃO</H1>
@@ -103,7 +103,8 @@
                         only five centuries, but also the leap into electronic typesetting, remaining essentially
                         unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
                         Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker
-                        including versions of Lorem Ipsum.</div>
+                        including versions of Lorem Ipsum . Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt libero voluptates sit sed, et est, autem eligendi quisquam repellat quaerat corrupti amet dolor, delectus repellendus Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut reprehenderit ipsam, nesciunt quam eos exercitationem provident suscipit nostrum debitis doloremque mollitia explicabo quibusdam est magnam ipsum voluptate quas dolore consectetur.
+                       </div>
                 </div>
 
             </div>
@@ -124,6 +125,7 @@
 
 <script>
     document.getElementById('Regioes_Brasil').addEventListener('change', function () {
+       
         var RegiaoEstoque = Regioes_Brasil.value
         const images = document.querySelectorAll('.RegiãoSelect img')
         images.forEach(img => img.style.display = 'none')
@@ -147,6 +149,9 @@
     })
 
     function Voltar() {
+        const divbemVindo = document.getElementById('BemVindo')
+        const divAvisosSelect = document.getElementById('AvisosSelect')
+
         const images = document.querySelectorAll('.RegiãoSelect img')
         images.forEach(img => img.style.display = 'none')
 
@@ -156,11 +161,18 @@
         }
 
         document.getElementById('Regioes_Brasil').value = "0"
+
+        divAvisosSelect.style.display = 'none'
+        divbemVindo.style.display = 'flex'
     }
 
 
     function AvançarResultado() {
-        alert("Avançando para o resultado...");
+        const divResultado = document.getElementById('divResultado')
+        const divAvisosSelect = document.getElementById('AvisosSelect')
+
+        divAvisosSelect.style.display = 'none'
+        divResultado.style.display = 'flex'
     }
 
     
@@ -169,10 +181,9 @@
         const divbemVindo = document.getElementById('BemVindo')
         const divAvisosSelect = document.getElementById('AvisosSelect')
 
-        if (divAvisosSelect.style.display === 'none' ) {
-            divAvisosSelect.style.display = 'block'
-            divbemVindo.style.display = 'none'
-        }
+        divbemVindo.style.display = 'none'
+        divAvisosSelect.style.display = 'flex'
+        
         const CustoPorProduto = Number(custo_da_aquisicao.value)
         const QtdProdutos = Number(quantidade.value)
         
