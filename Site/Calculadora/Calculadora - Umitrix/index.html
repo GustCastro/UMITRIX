@@ -20,7 +20,7 @@
     <div class="BotaoHome"><a><button class="btn-styleHome" onclick="Home()">Home</button></a></div>
     <div class="container">
 
-        <div class="bem-vindo">
+        <div id="BemVindo" class="bem-vindo" style="display: '';">
             <div class="TituloBemVindo">
                 <h1>BEM VINDO(A) SUA SIMULAÇÃO</h1>
             </div>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="ContainerPegunta">
                     <div class="pergunta1" style="margin-right: 15px;">
-                        <label for="custo_da_aquisicao">Informe o valor da aquisição dos aparelhos: </label>
+                        <label for="custo_da_aquisicao">Informe o valor médio dos aparelhos: </label>
                         <input type="number" min="0" id="custo_da_aquisicao" placeholder="ex:R$10000"
                             class="input-style">
                     </div>
@@ -39,24 +39,28 @@
                         <input type="number" min="0" id="quantidade" placeholder="ex:1500" class="input-style">
                     </div>
                 </div>
-                <div class="Botão"><button class="btn-style" onclick="Avançar()">Avançar</button></div>
+                <div class="Botão"><button class="btn-style" onclick="AvançarSelect()">Avançar</button></div>
             </div>
         </div>
 
 
-        <div class="RegiãoNeutra">
+
+        <div id="AvisosSelect" class="RegiãoNeutra" style="display: none;">
             <div class="RegiãoSelect">
                 <H2>REGIÃO</H2>
                 <div>
-                    <img src="Imgs/Brasil.png" alt="Brasil" width="300" height="300" style="">
+                    <img src="Imgs/Brasil.png" id="Brasil" width="300" height="300">
 
-                    <img src="Imgs/Brasil - Centro-Oeste.png" alt="Centro-Oeste" style="display: none;" width="300" height="300">
+                    <img src="Imgs/Brasil - Norte.png" id="Norte" style="display: none;" width="300" height="300">
 
-                    <img src="Imgs/Brasil - Nordeste.png" alt="Nordeste" style="display: none;" width="300" height="300">
+                    <img src="Imgs/Brasil - Centro-Oeste.png" id="Centro-Oeste" style="display: none;" width="300"
+                        height="300">
 
-                    <img src="Imgs/Brasil - Sudeste.png" alt="Norte" style="display: none;" width="300" height="300">
+                    <img src="Imgs/Brasil - Nordeste.png" id="Nordeste" style="display: none;" width="300" height="300">
 
-                    <img src="Imgs/Brasil - Sul.png" alt="Centro-Oeste" style="display: none;" width="300" height="300">
+                    <img src="Imgs/Brasil - Sudeste.png" id="Sudeste" style="display: none;" width="300" height="300">
+
+                    <img src="Imgs/Brasil - Sul.png" id="Sul" style="display: none;" width="300" height="300">
                 </div>
             </div>
             <div class="AvisosSelect">
@@ -68,24 +72,25 @@
                     </div>
                     <div class="ajustandoSelect">
                         <select name="Regiões" id="Regioes_Brasil" class="Select-style">
-                            <option value="" disabled selected>Selecione a região</option>
-                            <option value="Norte">Norte</option>
-                            <option value="Nordeste">Nordeste</option>
-                            <option value="Sudeste">Sudeste</option>
-                            <option value="CentroOeste">Centro-Oeste</option>
-                            <option value="Sul">Sul</option>
+                            <option value="0" disabled selected>Selecione a região</option>
+                            <option value="1">Norte</option>
+                            <option value="2">Nordeste</option>
+                            <option value="3">Sudeste</option>
+                            <option value="4">Centro-Oeste</option>
+                            <option value="5">Sul</option>
                         </select>
                     </div>
                     <div class="BotãoSelect">
                         <button class="btn-styleSelect2" onclick="Voltar()">Voltar</button>
-                        <button class="btn-styleSelect" onclick="Avançar()">Avançar</button>
+                        <button class="btn-styleSelect" onclick="AvançarResultado()">Avançar</button>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <div class="Resultado">
+
+        <div id="select" class="Resultado" style="display: none;">
             <div class="containerResultado">
                 <div class="TituloResultado">
                     <H1>RESULTADO DA SUA SIMULAÇÃO</H1>
@@ -118,15 +123,136 @@
 
 
 <script>
-    function CalcularPrejuizo() {
-        var CustoAquisicao = Number(custo_da_aquisicao.value)
-        var QtdPeodutos = Number(quantidade.value)
-        var RegiaoEstoque = regiao_do_estoque.value
+    document.getElementById('Regioes_Brasil').addEventListener('change', function () {
+        var RegiaoEstoque = Regioes_Brasil.value
+        const images = document.querySelectorAll('.RegiãoSelect img')
+        images.forEach(img => img.style.display = 'none')
+
+        const selectedValue = this.value
+        if (selectedValue > 0) {
+            const selectedImage = document.getElementById(
+                selectedValue === '1' ? 'Norte' :
+                    selectedValue === '2' ? 'Nordeste' :
+                        selectedValue === '3' ? 'Sudeste' :
+                            selectedValue === '4' ? 'Centro-Oeste' :
+                                selectedValue === '5' ? 'Sul' : null
+            )
+
+            if (selectedImage) {
+                selectedImage.style.display = 'block'
+                
+            }
+        }
+        
+    })
+
+    function Voltar() {
+        const images = document.querySelectorAll('.RegiãoSelect img')
+        images.forEach(img => img.style.display = 'none')
+
+        const brasilImage = document.getElementById('Brasil')
+        if (brasilImage) {
+            brasilImage.style.display = 'block'
+        }
+
+        document.getElementById('Regioes_Brasil').value = "0"
+    }
 
 
-        var custoTotalAquisicao = custoAquisicao * quantidadeValor
-        var depreciacao = ((taxaDepreciacaoAnual / 100) / 2) * custoTotalAquisicao
-        var danos = (percentualDanos / 100) * custoTotalAquisicao
+    function AvançarResultado() {
+        alert("Avançando para o resultado...");
+    }
+
+    
+
+    function AvançarSelect() {
+        const divbemVindo = document.getElementById('BemVindo')
+        const divAvisosSelect = document.getElementById('AvisosSelect')
+
+        if (divAvisosSelect.style.display === 'none' ) {
+            divAvisosSelect.style.display = 'block'
+            divbemVindo.style.display = 'none'
+        }
+        const CustoPorProduto = Number(custo_da_aquisicao.value)
+        const QtdProdutos = Number(quantidade.value)
+        
+        
+        var umidade = 0
+        var temperatura = 0
+        if (RegiaoEstoque == [regiaoSLA, regiaoSLA2]) {
+            temperatura = 26
+            umidade = 60
+
+            if (verão) {
+                temperatura = 30
+                umidade = 100
+            } else if (inverno) {
+                temperatura = 8
+                umidade == 80
+            } else if (primavera) {
+                temperatura = 15
+                umidade = 75
+            } else if (outono) {
+                temperatura = 20
+                umidade = 85
+            }
+        } else if (RegiaoEstoque == [regiaoSLA3, regiaoSLA4]) {
+            temperatura == 24
+            umidade = 70
+            if (verão) {
+                temperatura = 28
+                umidade = 90
+            } else if (inverno) {
+                temperatura = 12
+                umidae = 75
+            } else if (primavera) {
+                temperatura = 18
+                umidade = 70
+            } else if (outono) {
+                temperatura = 25
+                umidade = 35
+            }
+        } else if (RegiaoEstoque == [regiaoSLA5]) {
+            temperatura == 25
+            umidae = 80
+            if (verão) {
+                temperatura = 32
+                umidade = 65
+            } else if (inverno) {
+                temperatura = 10
+                umidade = 78
+            } else if (primavera) {
+                temperatura = 17
+                umidade = 85
+            } else if (outono) {
+                temperatura = 22
+                umidade = 75
+            }
+        }
+
+        var temperaturaIdeal = tempertatura >= 10 && Temperatura <= 30
+
+        var umidadePorcentagem = umidade / 100
+
+        var ValorDoEstoque = CustoPorProduto * QtdPeodutos
+
+        var estoqueMenosPrejuizo
+
+        if (umidade > 0.60 && (temperatura >= 31 || temeperatura <= 9)) {
+            var ComprometerConectores = ValorDoEstoque * 0.10
+            var DeteriorarCircuitos = ValorDoEstoque * 0.30
+            var AtingirDiscosRígidos = ValorDoEstoque * 0.20
+
+            var Prejuizo = ComprometerConectores + DeteriorarCircuitos + AtingirDiscosRígidos
+
+            estoqueMenosPrejuizo = ValorDoEstoque - Prejuizo
+            div_resultado.innerHTML += `Chance alta de prejuizo caso o periodo seja prolongado`
+        } else {
+            estoqueMenosPrejuizo = 0
+        }
+
+
+
 
         var prejuizo = custoTotalAquisicao + custoTotalArmazenagem + depreciacao + danos
 
@@ -137,7 +263,7 @@
         prejuizo = prejuizo.toFixed(2)
         danoEvitado = danoEvitado.toFixed(2)
 
-        exibir.innerHTML = `
+        div_resultado.innerHTML = `
         O custo da aquisição segundo o principio contábil é de: <b>R$${custoTotalAquisicao}</b><br>
         O custo da amarzenagem de segundo os calculos sobre Gestão de Estoque: <b>R$${custoArmazenagemMensal}</b><br>
         Já calculo de Depreciação segundo os Principios Contaveis é de: <b>R$${depreciacao}</b><br>
