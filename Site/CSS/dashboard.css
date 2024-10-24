@@ -81,7 +81,34 @@ i {
 .any-title {
   font-size: 1em;
   color: #fff;
-  margin-bottom: 20px;
+}
+
+.nivel_sensores {
+  display: flex;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.nivel_sensores .span1 {
+  width: 100%;
+  background-color: green;
+  border-radius: 10px;
+}
+
+.nivel_sensores .span2 {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #ffb001;
+  margin: 0 10px;
+
+}
+
+.nivel_sensores .span3 {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #C33;
 }
 
 .wrapper-boxes {
