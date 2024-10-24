@@ -4,7 +4,7 @@ window.onscroll = function() {mostrarBotao()};
 
 function mostrarBotao() {
     botaoIrParaCima.style.display = "none";
-    
+
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         botaoIrParaCima.style.display = "block";
     }
