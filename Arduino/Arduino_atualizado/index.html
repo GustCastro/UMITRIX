@@ -7,9 +7,9 @@
 </head>
 
 <body>
-<center>
-    <h1>Graphics Umitrix</h1>
-</center>
+    <center>
+        <h1>Graphics Umitrix</h1>
+    </center>
     <div style="display: flex;">
         <div style="width: 50%;">
             <canvas id="sensorUmidade"></canvas>
@@ -20,6 +20,54 @@
     </div>
 
     <script>
+
+
+
+        const canvasTemperaturaBackgroundColor = {
+            id: "canvasTemperaturaBackgroundColor",
+            beforeDraw(chart, args, pluginOptions) {
+                console.log(chart)
+                const { ctx, chartArea: { top, bottom, left, right, width, height }, scales: { x, y } } = chart
+
+                graphTemperaturaBackgroundColor(20, 30, "#c33")
+                graphTemperaturaBackgroundColor(10, 20, "#ffde21")
+                graphTemperaturaBackgroundColor(0, 10, "#3b8132")
+
+                function graphTemperaturaBackgroundColor(bracketLow, bracketHigh, color) {
+                    ctx.fillStyle = color
+                    ctx.fillRect(
+                        left,
+                        y.getPixelForValue(bracketHigh),
+                        width,
+                        y.getPixelForValue(bracketLow) - y.getPixelForValue(bracketHigh))
+                }
+            }
+
+        }
+
+        const canvasUmidadeBackgroundColor = {
+            id: "canvasUmidadeBackgroundColor",
+            beforeDraw(chart, args, pluginOptions) {
+                console.log(chart)
+                const { ctx, chartArea: { top, bottom, left, right, width, height }, scales: { x, y } } = chart
+
+                graphUmidadeBackgroundColor(20, 30, "#c33")
+                graphUmidadeBackgroundColor(10, 20, "#ffde21")
+                graphUmidadeBackgroundColor(0, 10, "#3b8132")
+
+                function graphUmidadeBackgroundColor(bracketLow, bracketHigh, color) {
+                    ctx.fillStyle = color
+                    ctx.fillRect(
+                        left,
+                        y.getPixelForValue(bracketHigh),
+                        width,
+                        y.getPixelForValue(bracketLow) - y.getPixelForValue(bracketHigh))
+                }
+            }
+
+        }
+
+
         var sensorTemperatura = new Chart(document.getElementById('sensorTemperatura').getContext('2d'), {
             type: 'line',
             data: {
@@ -42,7 +90,9 @@
                         beginAtZero: true,
                     },
                 },
-            }
+            },
+            plugins: [canvasTemperaturaBackgroundColor]
+
         });
 
         var sensorUmidade = new Chart(document.getElementById('sensorUmidade').getContext('2d'), {
@@ -67,7 +117,9 @@
                         beginAtZero: true
                     }
                 }
-            }
+            },
+            plugins: [canvasUmidadeBackgroundColor]
+
         });
 
         var paginacao = {};
