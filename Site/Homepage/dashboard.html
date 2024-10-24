@@ -40,10 +40,29 @@
       </div>
 
       <div class="grafico-principal">
-        <button class="next-sect" onclick="sensoresCard()">></button>
         <div class="wrapper-boxes">
           <section class="section-for-grid-box">
-            <div class="grid-box" id="gridBoxId">
+            <div class="carousel_wrapper" id="carouselWrapper">
+              <div class="grid-box" id="gridBoxId">
+              </div>
+              <div class="btn_next">
+                <button class="next-sect" onclick="proximaParteCarrosel()">></button>
+              </div>
+            </div>
+
+            <div class="history">
+              <h2>Histórico de dados elevados</h2>
+              <table id="historicoTableId">
+                <thead>
+                  <tr>
+                    <th>Data/Hora</th>
+                    <th>Sensor</th>
+                  </tr>
+                </thead>
+                <tbody id="dadosHistorico">
+                  <!-- inseridos via js -->
+                </tbody>
+              </table>
             </div>
           </section>
 
@@ -60,28 +79,6 @@
                 <section class="chart-container">
                   <canvas id="myChartOutro" class="graph" style="position: relative;"></canvas>
                 </section>
-              </div>
-              <div class="history">
-                <h2>Histórico de dados elevados</h2>
-                <table id="historicoTableId">
-                  <thead>
-                    <tr>
-                      <th>Data/Hora</th>
-                      <th>Sensor</th>
-                    </tr>
-                  </thead>
-                  <tbody id="dadosHistoricos">
-                    <tr>
-                      <td>01/01/2021 10:00</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <td>01/01/2021 10:15</td>
-                      <td>1</td>
-                    </tr>
-                    <!-- Novos dados de temperatura e umidade podem ser inseridos aqui -->
-                  </tbody>
-                </table>
               </div>
 
             </div>
@@ -133,8 +130,36 @@
   let chart1 = null;
   let chart2 = null;
 
+  let dataVetor;
+
   //função para criar o primeiro gráfico
   function createChart1() {
+
+    const canvasTemperaturaBackgroundColor = {
+      id: "canvasTemperaturaBackgroundColor",
+      beforeDraw(chart, args, pluginOptions) {
+        console.log(chart)
+        const { ctx, chartArea: { top, bottom, left, right, width, height }, scales: { x, y } } = chart
+
+        graphTemperaturaBackgroundColor(20, 30, "#c33", 0.3)
+        graphTemperaturaBackgroundColor(10, 20, "#ffde21", 0.3)
+        graphTemperaturaBackgroundColor(0, 10, "#3b8132", 0.3)
+
+        function graphTemperaturaBackgroundColor(bracketLow, bracketHigh, color, opacity) {
+          ctx.fillStyle = color
+          ctx.globalAlpha = opacity
+          ctx.fillRect(
+            left,
+            y.getPixelForValue(bracketHigh),
+            width,
+            y.getPixelForValue(bracketLow) - y.getPixelForValue(bracketHigh))
+        };
+        ctx.globalAlpha = 1
+
+      }
+
+    }
+
     const ctx = document.getElementById('myChart');
 
     if (chart1) {
@@ -169,12 +194,43 @@
             beginAtZero: true
           }
         }
-      }
+      },
+      plugins: [canvasTemperaturaBackgroundColor]
     });
   }
 
   //função para criar o segundo gráfico
   function createChart2() {
+
+    const canvasUmidadeBackgroundColor = {
+      id: "canvasUmidadeBackgroundColor",
+      beforeDraw(chart, args, pluginOptions) {
+        console.log(args)
+        console.log(pluginOptions)
+
+        const { ctx, chartArea: { top, bottom, left, right, width, height }, scales: { x, y } } = chart
+
+        graphUmidadeBackgroundColor(60, 80, "#c33", 0.3)
+        graphUmidadeBackgroundColor(30, 60, "#ffde21", 0.3)
+        graphUmidadeBackgroundColor(0, 30, "#3b8132", 0.3)
+
+        function graphUmidadeBackgroundColor(bracketLow, bracketHigh, color, opacity) {
+          ctx.fillStyle = color
+          ctx.globalAlpha = opacity
+
+          ctx.fillRect(
+            left,
+            y.getPixelForValue(bracketHigh),
+            width,
+            y.getPixelForValue(bracketLow) - y.getPixelForValue(bracketHigh))
+        };
+
+        ctx.globalAlpha = 1;
+      }
+
+    }
+
+
     const ctxOutro = document.getElementById('myChartOutro');
 
     if (chart2) {
@@ -209,7 +265,8 @@
             beginAtZero: true
           }
         }
-      }
+      },
+      plugins: [canvasUmidadeBackgroundColor]
     });
   }
 
@@ -239,37 +296,101 @@
     createChart2();
   }
 
+
+
   var sensor = 0;
+  const qtdSensoresCarrosel = 3
   function sensoresCard() {
     gridBoxId.innerHTML = '';
 
-    for (var i = 1; i <= 4; i++) {
+    for (var i = 1; i <= qtdSensoresCarrosel; i++) {
+
+      const numeroAleatorioTemperatura = parseInt(Math.random() * 30 + 1)
+      const numeroAleatorioUmidade = parseInt(Math.random() * 100 + 1)
+      var bg = "";
+      var bgUmidade = "";
+
+      const verde = "#3b8132"
+      const amarelo = "#ffb001"
+      const vermelho = "#c33"
+
+      if (numeroAleatorioTemperatura <= 15) {
+        bg = `background-color: ${verde};`
+
+      } else if (numeroAleatorioTemperatura <= 20) {
+
+        bg = `background-color: ${amarelo};`
+      } else {
+
+        bg = `background-color: ${vermelho};`
+      }
+
+
+      if (numeroAleatorioUmidade <= 40) {
+        bgUmidade = `background-color: ${verde};`
+
+      } else if (numeroAleatorioUmidade <= 80) {
+
+        bgUmidade = `background-color: ${amarelo};`
+
+      } else {
+
+        bgUmidade = `background-color: ${vermelho};`
+
+      }
+
+
       sensor += 1
       console.log(sensor)
       gridBoxId.innerHTML += `
   <div class="box1">
-                <span class="number-sensor">DHT11 #${sensor}</span>
-                <div class="temp bg-blue-theme df-complete">
-                  <div class="temp-text df-complete">
-                    <span style="font-size: 1.3em;">Temperatura</span>
-                    <span style="font-size: 2em;">28°C</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png"
-                    alt="temperature--v1" />
-                </div>
+    <span class="number-sensor">DHT11 #${sensor}</span>
+    <div class="teste temp df-complete" style="${bg}">
+      <div class="temp-text df-complete">
+        <span style="font-size: 1.3em;">Temperatura</span>
+        <span style="font-size: 2em;">${numeroAleatorioTemperatura}°C</span>
+      </div>
+      <img width="50" height="50" src="https://img.icons8.com/ios/50/temperature--v1.png" alt="temperature--v1" />
+    </div>
 
-                <div class="humidity bg-blue-theme df-complete">
-                  <div class="humidity-text df-complete">
-                    <span style="font-size: 1.3em;">Umidade</span>
-                    <span style="font-size: 2em;">67%</span>
-                  </div>
-                  <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png" alt="humidity" />
-                </div>
-              </div>
-      `
+    <div class="humidity bg-blue-theme df-complete"  style="${bgUmidade}">
+      <div class="humidity-text df-complete">
+        <span style="font-size: 1.3em;">Umidade</span>
+        <span style="font-size: 2em;">${numeroAleatorioUmidade}%</span>
+      </div>
+      <img width="50" height="50" src="https://img.icons8.com/ios/50/humidity.png" alt="humidity" />
+    </div>
+  </div>
+`;
+
     }
+  }
+
+  var posicaoCarrosel = 0;
+
+  function proximaParteCarrosel() {
+    posicaoCarrosel++
+
+    sensoresCard()
 
   }
 
+  function sensoresEstado() {
+    for (var i = 0; i < 11; i++) {
+
+      const numeroAleatorio = parseInt(Math.random() * 4 + 1)
+
+      dadosHistorico.innerHTML +=
+
+        `
+                  <tr>
+                    <td>01/01/2021 10:00</td>
+                    <td>${numeroAleatorio}</td>
+                  </tr>
+    `
+    }
+  }
+
   sensoresCard();
+  sensoresEstado();
 </script>
