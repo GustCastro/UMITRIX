@@ -10,8 +10,9 @@
       type="image/x-icon"
     />
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"
-/>
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
     <title>| Cadastro - Umitrix</title>
   </head>
@@ -30,198 +31,205 @@
       <div class="formulario_cadastro">
         <h2>Cadastre sua empresa!</h2>
         <!-- <form> -->
-          <div class="inputs_coluna">
-            <div class="input_maior">
-              <label for="email">Email:</label>
+        <div class="inputs_coluna">
+          <div class="input_maior">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="Email"
+              placeholder="Digite o e-mail"
+              required
+            />
+          </div>
+          <div class="inputs_menores">
+            <div class="div_menores">
+              <label for="razaoSocial">Razão social:</label>
               <input
-                type="email"
-                id="Email"
-                placeholder="Digite o e-mail"
+                type="text"
+                id="RazaoSocial"
+                class="campos"
+                placeholder="Nome da empresa"
                 required
               />
             </div>
-            <div class="inputs_menores">
-              <div class="div_menores">
-                <label for="razaoSocial">Razão social:</label>
-                <input
-                  type="text"
-                  id="RazaoSocial"
-                  class="campos"
-                  placeholder="Nome da empresa"
-                  required
-                />
-              </div>
-              <div class="div_menores">
-                <label for="CNPJ">CNPJ:</label>
-                <input
-                  type="text"
-                  id="CNPJ"
-                  class="campos"
-                  placeholder="00.000.000/0001-00"
-                  required
-                  onkeyup="oku_cnpj()"
-                />
-              </div>
-            </div>
-            <div class="inputs_menores">
-              <div class="div_menores">
-                <label for="RepresentanteLegal">Representante Legal:</label>
-                <input
-                  type="text"
-                  id="RepresentanteLegal"
-                  class="campos"
-                  placeholder="Representante legal"
-                  required
-                />
-              </div>
-              <div class="div_menores">
-                <label for="Telefone">Telefone:</label>
-                <input
-                  type="text"
-                  id="Telefone"
-                  class="campos"
-                  placeholder="Tel"
-                  required
-                  maxlength="12"
-                />
-              </div>
-            </div>
-            <div class="inputs_menores">
-              <div class="div_menores">
-                <label for="Senha">Senha:</label>
-                <input
-                  type="password"
-                  id="Senha"
-                  class="campos"
-                  placeholder="Digite a senha"
-                  required
-                  max="12"
-                  min="12"
-                />
-                <button
-                  type="button"
-                  onclick="gerarSenha()"
-                  class="btn_sugerir"
-                >
-                  Sugerir
-                </button>
-                <span id="senhaSugerida" class="senha_sugerida"
-                  >Senha sugerida:
-                </span>
-              </div>
-              <div class="div_menores">
-                <label for="RepetirSenha">Repetir senha:</label>
-                <input
-                  type="password"
-                  id="RepetirSenha"
-                  class="campos"
-                  placeholder="Confirme a senha"
-                  required
-                  max="12"
-                  min="12"
-                />
-              </div>
-            </div>
-            <div class="inputs_menores endereços">
-              <div class="div_menores">
-                <label for="Cidade">Cidade:</label>
-                <input
-                  type="text"
-                  id="Cidade"
-                  class="campos campo_cidade"
-                  placeholder="Digite a cidade"
-                  required
-                />
-              </div>
-              <div class="div_menores">
-                <label for="UF">UF:</label>
-                <select id="UF" class="ufs">
-                  <option value="" disabled selected>UF</option>
-                  <option value="AC">AC</option>
-                  <option value="AL">AL</option>
-                  <option value="AP">AP</option>
-                  <option value="AM">AM</option>
-                  <option value="BA">BA</option>
-                  <option value="CE">CE</option>
-                  <option value="DF">DF</option>
-                  <option value="ES">ES</option>
-                  <option value="GO">GO</option>
-                  <option value="MA">MA</option>
-                  <option value="MT">MT</option>
-                  <option value="MS">MS</option>
-                  <option value="MG">MG</option>
-                  <option value="PA">PA</option>
-                  <option value="PB">PB</option>
-                  <option value="PR">PR</option>
-                  <option value="PE">PE</option>
-                  <option value="PI">PI</option>
-                  <option value="RJ">RJ</option>
-                  <option value="RN">RN</option>
-                  <option value="RS">RS</option>
-                  <option value="RO">RO</option>
-                  <option value="RR">RR</option>
-                  <option value="SC">SC</option>
-                  <option value="SP">SP</option>
-                  <option value="SE">SE</option>
-                  <option value="TO">TO</option>
-                </select>
-              </div>
-            </div>
-            <div class="inputs_menores">
-              <div class="div_menores">
-                <label for="Rua">Rua:</label>
-                <input
-                  type="text"
-                  id="Rua"
-                  class="campos campo_rua"
-                  placeholder="Rua"
-                  required
-                />
-              </div>
-              <div class="div_menores">
-                <label for="numero">Nª:</label>
-                <input
-                  type="text"
-                  id="Numero"
-                  class="campos campo_numero"
-                  placeholder="Num"
-                  required
-                />
-              </div>
-              <div class="div_menores">
-                <label for="CEP">CEP:</label>
-                <input
-                  type="text"
-                  id="CEP"
-                  class="campos campo_cep"
-                  placeholder="00000-000"
-                  required
-                  maxlength="8"
-                />
-              </div>
-            </div>
-            <div class="div_btn">
-              <button type="submit" class="btn_cadastrar" onclick="cadastrar()">Cadastrar</button>
-            </div>
-            <div class="popup_box" style="display: none;" id="id_popup_box">
-                <div class="container_popup_msg">
-                    <span class="loader"></span>
-                    <span id="p_cadastrando" class="cadastrando">Cadastrando Usuário</span>
-                    <span id="p_cadastrado" class="cadastrado">Usuário Cadastrado!</span>
-                </div>
-            </div>
-            <div class="msg_login">
-              <p>Já possui login?</p>
-              <div class="link">
-                <a href="../Login-Umitrix/Login-Umitrix.html">Login</a>
-              </div>
+            <div class="div_menores">
+              <label for="CNPJ">CNPJ:</label>
+              <input
+                type="text"
+                id="CNPJ"
+                class="campos"
+                placeholder="00.000.000/0001-00"
+                required
+                onkeyup="oku_cnpj()"
+              />
             </div>
           </div>
+          <div class="inputs_menores">
+            <div class="div_menores">
+              <label for="RepresentanteLegal">Representante Legal:</label>
+              <input
+                type="text"
+                id="RepresentanteLegal"
+                class="campos"
+                placeholder="Representante legal"
+                required
+              />
+            </div>
+            <div class="div_menores">
+              <label for="Telefone">Telefone:</label>
+              <input
+                type="text"
+                id="Telefone"
+                class="campos"
+                placeholder="Tel"
+                required
+                maxlength="12"
+              />
+            </div>
+          </div>
+          <div class="inputs_menores">
+            <div class="div_menores">
+              <label for="Senha">Senha:</label>
+              <input
+                type="password"
+                id="Senha"
+                class="campos"
+                placeholder="Digite a senha"
+                required
+                max="12"
+                min="12"
+              />
+              <button type="button" onclick="gerarSenha()" class="btn_sugerir">
+                Sugerir
+              </button>
+              <span id="senhaSugerida" class="senha_sugerida"
+                >Senha sugerida:
+              </span>
+            </div>
+            <div class="div_menores">
+              <label for="RepetirSenha">Repetir senha:</label>
+              <input
+                type="password"
+                id="RepetirSenha"
+                class="campos"
+                placeholder="Confirme a senha"
+                required
+                max="12"
+                min="12"
+              />
+            </div>
+          </div>
+          <div class="inputs_menores endereços">
+            <div class="div_menores">
+              <label for="Cidade">Cidade:</label>
+              <input
+                type="text"
+                id="Cidade"
+                class="campos campo_cidade"
+                placeholder="Digite a cidade"
+                required
+              />
+            </div>
+            <div class="div_menores">
+              <label for="UF">UF:</label>
+              <select id="UF" class="ufs">
+                <option value="" disabled selected>UF</option>
+                <option value="AC">AC</option>
+                <option value="AL">AL</option>
+                <option value="AP">AP</option>
+                <option value="AM">AM</option>
+                <option value="BA">BA</option>
+                <option value="CE">CE</option>
+                <option value="DF">DF</option>
+                <option value="ES">ES</option>
+                <option value="GO">GO</option>
+                <option value="MA">MA</option>
+                <option value="MT">MT</option>
+                <option value="MS">MS</option>
+                <option value="MG">MG</option>
+                <option value="PA">PA</option>
+                <option value="PB">PB</option>
+                <option value="PR">PR</option>
+                <option value="PE">PE</option>
+                <option value="PI">PI</option>
+                <option value="RJ">RJ</option>
+                <option value="RN">RN</option>
+                <option value="RS">RS</option>
+                <option value="RO">RO</option>
+                <option value="RR">RR</option>
+                <option value="SC">SC</option>
+                <option value="SP">SP</option>
+                <option value="SE">SE</option>
+                <option value="TO">TO</option>
+              </select>
+            </div>
+          </div>
+          <div class="inputs_menores">
+            <div class="div_menores">
+              <label for="Rua">Rua:</label>
+              <input
+                type="text"
+                id="Rua"
+                class="campos campo_rua"
+                placeholder="Rua"
+                required
+              />
+            </div>
+            <div class="div_menores">
+              <label for="numero">Nª:</label>
+              <input
+                type="text"
+                id="Numero"
+                class="campos campo_numero"
+                placeholder="Num"
+                required
+              />
+            </div>
+            <div class="div_menores">
+              <label for="CEP">CEP:</label>
+              <input
+                type="text"
+                id="CEP"
+                class="campos campo_cep"
+                placeholder="00000-000"
+                required
+                maxlength="8"
+              />
+            </div>
+          </div>
+          <div class="div_btn">
+            <button type="submit" class="btn_cadastrar" onclick="cadastrar()">
+              Cadastrar
+            </button>
+          </div>
+          <div class="popup_box" style="display: none" id="id_popup_box">
+            <div class="container_popup_msg">
+              <span class="loader"></span>
+              <span id="p_cadastrando" class="cadastrando"
+                >Cadastrando Usuário</span
+              >
+              <span id="p_cadastrado" class="cadastrado"
+                >Usuário Cadastrado!</span
+              >
+            </div>
+          </div>
+          <div class="msg_login">
+            <p>Já possui login?</p>
+            <div class="link">
+              <a href="../Login-Umitrix/Login-Umitrix.html">Login</a>
+            </div>
+          </div>
+        </div>
         <!-- </form> -->
       </div>
     </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
-<script src="../JavaScript/cadastro.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+  <script src="../JavaScript/cadastro.js"></script>
 </html>
