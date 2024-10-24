@@ -16,20 +16,13 @@ body {
     
 }   
 }
-/*   askndasdnas         */
 .logo{
     position: absolute;
     top: 50px; 
     right: 50px; 
 }
-.bem-vindo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
 h1{
-    font-size: 3em;
+    margin: 0;
     color:#fafaff;
     -webkit-text-stroke: 2px #273469; 
      
@@ -38,67 +31,98 @@ h2{
     padding: 0;
     margin: 0;
 }
-.Avisos{
-    background-color: rgb(32, 173, 67);
-    text-align: center;
-    font-size: 20px;
-    color:#fafaff;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+
+/* Primeiras Perguntas */
+
+
+.bem-vindo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    gap: 15px;
+   
+}
+.TituloBemVindo{
+    margin-top: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px
     
 }
-.Perguntas{
-    margin-top: 35px;
-    width: 50%;
-    padding: 20px;
+.PerguntasBemVindo{
+    flex: 1;
+    margin-top: 0px;
+    width: 55%;
+    height: 400px;
+    padding: 50px;
     border-radius: 10px;
-    background-color: aqua;
+    background-color: #273469;
     color:#fafaff;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    
+}
+.AvisosBemVindo{
+    margin-top: 5px;
+    text-align: center;
+    font-size: 30px;
+    color:#fafaff;
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    
+    
+}
+.ContainerPegunta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+   
+}
+.input-style {
+    margin-top: 5px;
+    width: 75%;
+    height: 65px;
+    padding: 0;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); 
+    border: none; 
+    border-radius: 20px;
+    background-color: #fafaff;
+    color: #a3a3a3; 
+    outline: none; 
+    font-family: "Poppins"; 
+    text-align: center;
+    font-size: 25px;
+    line-height: 1.5;
+}
+.input-style::placeholder {
+    color: #a3a3a3;
+}
+.pergunta1{
+    font-size: 24px;
+    margin-top: 65px;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold
+   
 }
 .Botão{
     display: flex;
     justify-content: flex-end;
     margin-top: 45px;
 }
-.ContainerPegunta{
-    display: flex;
 
-}
-.pergunta1{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-   
-}
-.pergunta1 input{
-    width: 100%;
-}
 
-.Região{
-    background-color: aqua;
-    font-size: 80px;
-    color: #e4d9ff;
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
-}
-.input-style {
-    width: 25%;
-    height: 50px;
-    padding: 0;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); 
-    border: none; 
-    border-radius: 10px;
-    background-color: #fafaff;
-    color: #fafaff; 
-    outline: none; 
-    font-family: "Poppins"; 
-    text-align: center;
-    font-size: 20px;
-    line-height: 1.5;
-}
 .Select-style{
     appearance: none; 
     -webkit-appearance: none; 
@@ -124,19 +148,18 @@ h2{
     line-height: 1.5;
 }
 .btn-style{
-    width: 25%;
+    width: 20%;
     padding: 10px;
-  
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5); 
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); 
     border: none; 
     border-radius: 10px;
     background-color: #30343f;
     color: #ffffff; 
     outline: none; 
-    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
     font-family: "Poppins"; 
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
 }
 footer{
@@ -145,15 +168,6 @@ footer{
     height: 10px;
     background-color: #30343F;
 }
-.Resultado{
-    display: none;
-}
-.select{
-    display: flex;
-    justify-content: space-between;
-    align-self: center;
-}
-
 
 
 /* SELECTS BRASILSILSILSIL */
@@ -269,4 +283,8 @@ footer{
     text-align: center;
     font-size: 25px;
     font-weight: bold;
+}
+/* resultado */
+.Resultado{
+    display: none;
 }
